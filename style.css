@@ -57,7 +57,7 @@ html {
   align-items: center;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url(./assets/4.jpg);
+    url(assets/4.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
