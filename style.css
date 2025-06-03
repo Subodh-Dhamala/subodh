@@ -87,6 +87,7 @@ html {
   font-style: normal;
   font-weight: bolder;
   font-size: 80px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.849);
 }
 
 .hero p {
@@ -95,6 +96,7 @@ html {
   font-weight: 400;
   font-style: normal;
   font-size: 25px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.589);
 }
 
 .footer {
