@@ -1,0 +1,194 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .navbar {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            align-items: center;
+            background-color: #080708;
+            color: white;
+            padding: 10px 20px;
+            height: 85px;
+        }
+
+        .logo {
+            font-family: "Pacifico", cursive;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .logo h2 a {
+            text-decoration: none;
+            color: #D00000;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style-type: none;
+            font-weight: bolder;
+        }
+
+        .nav-links li {
+            padding: 10px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav-links li a:hover {
+            color: red;
+            transition: color 0.3s ease;
+            transform: scale(1.2);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                url('assets/landingPage/bg.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: top center;
+            color: #151E3F;
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            color: rgb(0, 195, 255);
+            font-family: "Sigmar One", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-weight: bolder;
+            font-size: 80px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.849);
+        }
+
+        .hero p {
+            color: rgb(212, 210, 210);
+            font-family: "Pacifico", cursive;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 25px;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.589);
+        }
+
+        .footer {
+            background-color: #080708;
+            color: white;
+            text-align: center;
+            padding: 15px 20px;
+            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .favicons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .favicons img {
+            width: 30px;
+            height: 30px;
+            filter: invert(1);
+            transition: transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .favicons img:hover {
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 610px) {
+            .navbar {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 20px;
+                height: auto;
+                position: relative;
+            }
+
+            .menu-toggle {
+                display: block;
+                font-size: 28px;
+                color: white;
+                cursor: pointer;
+                background: none;
+                border: none;
+                padding: 5px;
+                line-height: 1;
+                margin:5px;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                text-align: center;
+                background-color: #080708;
+                position: absolute;
+                top: 50px;
+                left: 0;
+                padding: 10px 0;
+                z-index: 1;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links li {
+                padding: 10px 0;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+          
+            }
+
+            .hero p {
+                font-size: 18px;
+                padding: 0 1rem;
+            }
+
+            .favicons img {
+                width: 24px;
+                height: 24px;
+            }
+
+            .footer {
+                font-size: 14px;
+                padding: 20px 10px;
+            }
+        }
