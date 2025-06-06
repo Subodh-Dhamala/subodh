@@ -83,6 +83,18 @@ function clearDisplay() {
     evaluated = false; // Reset evaluated flag
 }
 
+function handleBackspace() {
+    if (step === 1 && numArray.length > 0) {
+        numArray.pop(); // Remove last digit
+        firstNumber = numArray.join('');
+        display.value = firstNumber || '0';
+    } else if (step === 2 && secondNumberArr.length > 0) {
+        secondNumberArr.pop(); // Remove last digit
+        secondNumber = secondNumberArr.join('');
+        display.value = secondNumber || '0';
+    }
+}
+
 document.addEventListener('keydown', (event) => {
     const key = event.key;
 
@@ -95,5 +107,7 @@ document.addEventListener('keydown', (event) => {
         calculateResult();
     } else if (key === 'Escape' || key === 'c') {
         clearDisplay();
+    } else if (key === 'Backspace') {
+        handleBackspace();
     }
 });
