@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Sigmar+One&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./calculator.css" />
+</head>
+<body>
+  <div class="container">
+    <section class="header">
+      <h1>Basic Calculator</h1>
+      <input type="text" id="display" readonly />
+    </section>
+
+    <section class="buttons">
+				<button onclick="getNumber(1)">1</button>
+				<button onclick="getNumber(2)">2</button>
+				<button onclick="getNumber(3)">3</button>
+				<button onclick="getOperator('+')">+</button>
+
+				<button onclick="getNumber(4)">4</button>
+				<button onclick="getNumber(5)">5</button>
+				<button onclick="getNumber(6)">6</button>
+				<button onclick="getOperator('-')">-</button>
+
+				<button onclick="getNumber(7)">7</button>
+				<button onclick="getNumber(8)">8</button>
+				<button onclick="getNumber(9)">9</button>
+				<button onclick="getOperator('*')">*</button>
+
+				<button onclick="clearDisplay()">AC</button>
+				<button onclick="getNumber(0)">0</button>
+
+				<button onclick="calculateResult()">=</button>
+				<button onclick="getOperator('/')">/</button>
+			</section>
+  </div>
+
+  <script src="./calculator.js"></script>
+</body>
+</html>
