@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  filter: brightness(0.6);
+  transition: background-image 0.5s ease-in-out;
+}
+
+.weather-app {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 420px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  position: relative;
+  margin: 40px auto;
+}
+
+.weather-app h1 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #e0f7fa;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#cityInput {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#cityInput::placeholder {
+  color: #ccc;
+}
+
+#searchButton {
+  background-color: rgba(0, 255, 255, 0.2);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 15px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+#searchButton:hover {
+  background-color: rgba(0, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+.weather-info {
+  margin-top: 20px;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.weather-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #81ecec;
+}
+
+.weather-info p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #dfe6e9;
+}
+
+.weather-info i {
+  margin-right: 8px;
+  color: #00cec9;
+}
+
+#weatherIcon {
+  margin-top: 15px;
+  color: #00cec9;
+  font-size: 4rem;
+}
+
+.error-message {
+  margin-top: 20px;
+  color: #ff7675;
+}
+
+.error-message img {
+  width: 100px;
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 500px) {
+  .search-box {
+    flex-direction: column;
+  }
+
+  #searchButton {
+    width: 100%;
+  }
+
+  #cityInput {
+    width: 100%;
+  }
+}
+
+#localTime {
+  font-weight: 600;
+  color: #81ecec;
+}
