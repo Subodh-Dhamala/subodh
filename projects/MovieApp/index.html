@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MeroCinema</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Sigmar+One&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="dark-mode">
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="logo-container">
+        <a href="#" class="logo">MeroCinema</a>
+      </div>
+      <div class="menu-container">
+        <ul class="menu-list">
+          <li class="menu-list-item active">Home</li>
+          <li class="menu-list-item">Movies</li>
+          <li class="menu-list-item">Series</li>
+          <li class="menu-list-item">Popular</li>
+          <li class="menu-list-item">Trends</li>
+        </ul>
+        <form id="form" class="search-form">
+          <input type="text" id="search" placeholder="Search movies..." />
+          <button type="submit" class="search-btn"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+      <div class="profile-container">
+        <img class="profile-picture" src="img/profile.jpg" alt="Profile" />
+        <div class="profile-text-container">
+          <span class="profile-text">Profile</span>
+          <i class="fas fa-caret-down"></i>
+        </div>
+        <div class="toggle">
+          <i class="fas fa-moon toggle-icon"></i>
+          <i class="fas fa-sun toggle-icon"></i>
+          <div class="toggle-ball"></div>
+        </div>
+        <div class="mobile-menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <div class="mobile-menu-header">
+      <a href="#" class="logo">MeroCinema</a>
+      <i class="fas fa-times mobile-menu-close"></i>
+    </div>
+    <form id="mobile-search-form" class="mobile-search-form">
+      <input type="text" id="mobile-search" placeholder="Search..." />
+      <button type="submit" class="mobile-search-btn"><i class="fas fa-search"></i></button>
+    </form>
+    <ul class="mobile-menu-list">
+      <li class="mobile-menu-item active" data-category="Home">Home</li>
+      <li class="mobile-menu-item" data-category="Movies">Movies</li>
+      <li class="mobile-menu-item" data-category="Series">Series</li>
+      <li class="mobile-menu-item" data-category="Popular">Popular</li>
+      <li class="mobile-menu-item" data-category="Trends">Trends</li>
+      <li class="mobile-menu-item" data-category="Community">Community</li>
+      <li class="mobile-menu-item" data-category="Bookmarks">Bookmarks</li>
+      <li class="mobile-menu-item" data-category="TV Shows">TV Shows</li>
+      <li class="mobile-menu-item" data-category="Coming Soon">Coming Soon</li>
+      <li class="mobile-menu-item" data-category="Store">Store</li>
+    </ul>
+  </div>
+  <div class="sidebar">
+    <i class="left-menu-icon fas fa-home" data-tooltip="Home"></i>
+    <i class="left-menu-icon fas fa-users" data-tooltip="Community"></i>
+    <i class="left-menu-icon fas fa-bookmark" data-tooltip="Bookmarks"></i>
+    <i class="left-menu-icon fas fa-tv" data-tooltip="TV Shows"></i>
+    <i class="left-menu-icon fas fa-hourglass-start" data-tooltip="Coming Soon"></i>
+    <i class="left-menu-icon fas fa-shopping-cart" data-tooltip="Store"></i>
+  </div>
+  <div id="main" class="main-content"></div>
+  <div class="pagination">
+    <div class="page" id="prev">Prev</div>
+    <div class="current" id="current">1</div>
+    <div class="page" id="next">Next</div>
+  </div>
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <div class="overlay-content" id="overlay-content"></div>
+    <div id="arrows">
+      <i class="fas fa-arrow-left" id="left-arrow"></i>
+      <i class="fas fa-arrow-right" id="right-arrow"></i>
+    </div>
+  </div>
+  <div class="loader"></div>
+  <script src="./script.js"></script>
+</body>
+</html>
