@@ -23,7 +23,6 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 25px 0;
-  background-color: rgba(255, 255, 255, 0.9);
   font-family: 'Sigmar One', sans-serif;
   font-size: 20px;
 }
@@ -339,3 +338,4 @@ footer .copyright p {
     margin: 10px 0;
   }
 }
+
