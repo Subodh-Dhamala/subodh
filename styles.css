@@ -18,9 +18,6 @@ body {
   padding: 0 20px;
 }
 
-/* ===========================
-   Navigation
-=========================== */
 nav {
   display: flex;
   justify-content: space-between;
@@ -76,14 +73,11 @@ nav ul li a:hover::after {
 }
 
 .menu-bar {
-  display: none; /* hidden on large screens */
+  display: none;
   font-size: 28px;
   cursor: pointer;
 }
 
-/* ===========================
-   Hero Section
-=========================== */
 .hero {
   display: flex;
   justify-content: space-between;
@@ -176,9 +170,6 @@ nav ul li a:hover::after {
   box-shadow: 0 10px 30px rgba(52, 84, 209, 0.2);
 }
 
-/* ===========================
-   About Section
-=========================== */
 .aboutContainer {
   display: flex;
   justify-content: space-around;
@@ -214,9 +205,6 @@ nav ul li a:hover::after {
   max-height: 400px;
 }
 
-/* ===========================
-   Contact Section
-=========================== */
 .contact {
   padding: 80px 20px;
   text-align: center;
@@ -274,9 +262,6 @@ nav ul li a:hover::after {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
-/* ===========================
-   Footer
-=========================== */
 footer {
   margin-top: 80px;
   padding: 30px 0;
@@ -308,9 +293,6 @@ footer .copyright p {
   color: #220901;
 }
 
-/* ===========================
-   Media Queries (Responsive)
-=========================== */
 @media (max-width: 900px) {
   .hero {
     flex-direction: column;
