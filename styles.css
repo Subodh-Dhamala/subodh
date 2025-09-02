@@ -148,6 +148,7 @@ nav ul li a:hover::after {
 
 #contact {
   color: #FFFFFF;
+  background-color: green;
 }
 
 #contact:hover {
@@ -337,5 +338,6 @@ footer .copyright p {
     margin: 10px 0;
   }
 }
+
 
 
