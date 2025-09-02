@@ -95,8 +95,9 @@ nav ul li a:hover::after {
 }
 
 .heroContent h3 {
-  font-size: 40px;
-  color: #3454D1;
+    font-family: 'Sigmar One';
+    font-size: 40px;
+    color: #43cb0c;
 }
 
 .heroContent h2 {
@@ -337,3 +338,4 @@ footer .copyright p {
     margin: 10px 0;
   }
 }
+
