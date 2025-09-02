@@ -207,7 +207,6 @@ nav ul li a:hover::after {
 .contact {
   padding: 80px 20px;
   text-align: center;
-  background-color: #FFFFFF;
 }
 
 .contact h2 {
@@ -338,6 +337,7 @@ footer .copyright p {
     margin: 10px 0;
   }
 }
+
 
 
 
