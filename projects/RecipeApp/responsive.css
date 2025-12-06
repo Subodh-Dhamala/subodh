@@ -1,0 +1,15 @@
+@media(max-width:600px){
+
+  
+#search-box {
+  height: 3rem;
+  width: 15rem;
+ 
+}
+
+#search-container button{
+   height: 3rem;
+   
+}
+  
+}

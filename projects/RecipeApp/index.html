@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Let him cook</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Let him cook</div>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <form id="search-form">
+        <h1 class="hero-info">What do you Want to Cook?</h1>
+        <div id="search-container">
+          <input type="text" placeholder="SAY ITS NAME.." id="search-box" />
+          <button type="submit" id="searchBtn">Go</button>
+           <button type="button" id="randomBtn">Random Dish</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Recipe Cards -->
+    <div id="recipe-container"></div>
+
+    <!-- Recipe Modal -->
+    <div class="recipeModal">
+      <div class="recipeDetailsBox">
+        <button class="recipeClose">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="recipeDetailsContent"></div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="logo">© Subodh 2026</div>
+      <ul>
+        <li>LinkedIn</li>
+        <li>GitHub</li>
+        <li>Email</li>
+      </ul>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
