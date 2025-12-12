@@ -33,7 +33,7 @@ const fetchRecipes = async (query) => {
 
     if (!data.meals) {
       recipeContainer.innerHTML =
-        "<h2>No recipes found! Try 'chicken' or 'pizza'</h2>";
+        "<h2>No recipes found! Try 'Cake' or 'Random Dish'</h2>";
       return;
     }
 
@@ -119,3 +119,4 @@ recipeModal.addEventListener("click", (e) => {
     recipeModal.style.display = "none";
   }
 });
+
