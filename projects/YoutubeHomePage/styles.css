@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+  background-color: #181818;
+}
+
+body {
+  height: 100vh;
+  display: flex; 
+  flex-direction: column;
+  color: #fff;
+}
+
+.searchbox {
+  display: flex;
+  align-items: center;
+  width: 600px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid #303030;
+  overflow: hidden;
+   background-color: transparent;
+   cursor: pointer;
+}
+
+.searchDiv{
+  display: flex;
+  gap:10px;
+}
+
+.searchbox input {
+  flex: 1;
+  height: 100%;
+  padding: 0 14px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+}
+
+.searchBtn{
+ width: 24px;
+  height: 24px;
+  background-color: #222;
+  border: none;
+  
+}
+
+.voiceSearch img{
+  height: 25px;
+  background-color: #222;
+  border-radius: 50%;
+}
+
+.sidebar{
+  margin-top: 10px;
+  width: 80px;
+  height: 100%;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  font-size: 10px;
+  color: #aaa;
+  padding: 20px;
+  
+}
+
+.sideElements{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap:20px;
+
+}
+.sideElements div{
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+}
+
+sup{
+  font-size: 8px; color: #aaa; margin:4px;
+}
+
+.navContainer{
+  display: flex;
+  flex-direction: column;
+  height: 130px;
+  position: fixed;
+  top:0;
+  width: 100%;
+  flex: 1;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  height:80px;
+  gap:20px; 
+  padding: 10px;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.navbar div{
+  display: flex;
+}
+
+.mainLogo{
+font-size: 24px;
+}
+
+.icons{
+  height: 24px;
+  width: 24px;
+  margin: 4px;
+}
+
+.profile{
+    border-radius: 50%;
+    border: 2px solid #4dbf00;  
+    cursor: pointer;
+}
+
+.createBtn{
+  height: 36px;
+  padding: 0 14px;
+  border-radius: 18px;
+  background-color: #272727;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  display: flex;
+  gap:8px;
+  align-items: center;
+  
+  
+}
+.accounts{
+  display: flex;
+  gap:10px;
+  
+}
+
+.profile{
+  height:32px;
+  width: 32px;
+}
+
+.categories{
+  margin-left: 80px;
+  display: flex;
+  gap:10px;
+  flex:1;
+  padding: 20px;
+}
+
+.categories button{
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+}
+
+.videoCard {
+  display: flex;
+  flex-direction: column;
+  margin:8px;
+  flex:1
+}
+
+.videoMetaData{
+  padding: 2px;
+  font-size: 14px;
+  color:#aaaaaa;
+}
+
+.videoSection {
+  display: flex;
+  flex-direction: column;
+  margin-top: 130px;
+  margin-left: 80px;
+}
+
+.videoContainer {
+  display: flex;
+  cursor: pointer;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+}
+
+.videoDetails {
+  display: flex;
+  margin: 4px;
+  justify-content: space-between;
+}
+
+.videoText{
+  display: flex;
+
+  flex-direction: column;
+  margin: 4px;
+  padding: 2px;
+  width: 85%;
+  gap:4px;
+  color:#aaa;
+  font-size: clamp(14px,1.2vw,16px);
+}
+
+.channelLogo {
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.thumbnail {
+  height: auto;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.shortsLogo{
+  display: flex;
+height: 50px;
+width: 100%;
+}
+
+.shortsLogo span{
+  padding: 8px;
+}
+
+.shortsSection {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.shortsThumbnail{
+  border-radius: 8px;
+}
+
+.shortsContainer{
+  display: flex;
+  flex-wrap: wrap;
+}
+.shortsCard{
+   display: flex;
+  flex-direction: column;
+  margin:8px;
+  flex:1;
+}
+
+.shortsContent{
+  display: flex;
+}
+
+button{
+  background-color:rgba(255,255,255,0.1);
+  color: #fff;
+  cursor: pointer;
+}
+
+.active{
+  background-color: #fff;
+  color:#181818
+}
+
+.ham,.moreBtn{
+  font-size: 24px;
+  width: 50px;
+  height:50px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
