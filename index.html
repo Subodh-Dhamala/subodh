@@ -1,54 +1,387 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Subodh</title>
+  <title>Subodh Dhamala — Full-Stack Developer</title>
+  <meta name="description" content="Subodh Dhamala — Full-Stack Developer. I make ideas happen." />
+  
   <link rel="stylesheet" href="./styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Sigmar+One&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-  <div class="container">
-    <nav>
-      <div class="logo"><a href="./index.html"><h1>Subodh</h1></a></div>
-      <div class="menu-bar">☰</div>
-      <div class="navLinks">
-        <ul class="menu-list">
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./about.html">About</a></li>
-          <li><a href="./projects.html">Projects</a></li>
-          <li><a href="./contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
 
-    <section class="hero" id="home">
-      <div class="heroContent">
-        <h3>Hi!</h3>
-        <h2>I’m <span>सुबोध धमला</span></h2>
-        <p>I make ideas happen.</p>
-        <div class="buttons">
-          <a href="./assets/Subodh_Dhamala_CV.pdf" download class="btn" id="cv">Download CV</a>
-          <a href="./contact.html" class="btn" id="contact">Contact</a>
+  <!-- Sticky Minimal Navbar -->
+  <header>
+    <div class="container">
+      <nav class="nav-wrapper">
+        <a href="#hero" class="nav-logo">
+          <span class="nav-logo-dot"></span>
+          <span>Subodh Dhamala</span>
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="#projects" class="nav-item-link">Projects</a></li>
+          <li><a href="#skills" class="nav-item-link">Skills</a></li>
+          <li><a href="#contact" class="nav-item-link">Contact</a></li>
+          <li><a href="#" data-open-cv class="nav-item-link">CV</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="btn-icon theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+            <i data-lucide="sun" class="icon-sun"></i>
+            <i data-lucide="moon" class="icon-moon"></i>
+          </button>
+          
+          <button class="btn-icon mobile-toggle" aria-label="Toggle menu">
+            <i data-lucide="menu"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Flow: Hero -> Projects -> Skills -> Contact -->
+  <main>
+    <div class="container">
+      
+      <!-- 1. Hero Section -->
+      <section id="hero" class="hero-section">
+        <div class="hero-header">
+          <div class="hero-identity">
+            <div class="hero-status">
+              <span class="status-dot"></span>
+              <span>Available for opportunities &bull; Bhaktapur, Nepal</span>
+            </div>
+
+            <h1 class="hero-name">
+              Subodh Dhamala <span class="nepali-inline">सुबोध धमला</span>
+            </h1>
+            <div class="hero-tagline">“I make ideas happen.”</div>
+            <p class="hero-bio">
+              Full-stack developer building complete, reliable web applications. Experienced in Next.js, React, Node.js, Python, PostgreSQL, and real-time architectures.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn btn-primary">
+                <i data-lucide="folder-git-2"></i> View Projects
+              </a>
+              <a href="#contact" class="btn">
+                <i data-lucide="mail"></i> Contact Me
+              </a>
+              <button class="btn" data-open-cv>
+                <i data-lucide="file-text"></i> View CV
+              </button>
+
+              <div class="social-links-inline">
+                <a href="https://github.com/Subodh-Dhamala" target="_blank" class="social-icon-btn" title="GitHub" aria-label="GitHub">
+                  <i data-lucide="github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/subodhdhamala/" target="_blank" class="social-icon-btn" title="LinkedIn" aria-label="LinkedIn">
+                  <i data-lucide="linkedin"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-avatar">
+            <img src="./assets/profile.jpg" alt="Subodh Dhamala" />
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Selected Projects Section -->
+      <section id="projects" class="section">
+        <div class="section-header">
+          <div class="section-label">Selected Projects</div>
+          <h2 class="section-title">What I Build</h2>
+        </div>
+
+        <div class="projects-list">
+          
+          <!-- 1. Full-Stack Authentication System -->
+          <div class="project-card">
+            <div class="project-card-header">
+              <a href="https://github.com/Subodh-Dhamala/Full-Stack-Authentication-App" target="_blank" class="project-title">
+                Full-Stack Authentication System
+                <i data-lucide="arrow-up-right"></i>
+              </a>
+              <div class="project-links">
+                <a href="https://github.com/Subodh-Dhamala/Full-Stack-Authentication-App" target="_blank" class="project-link-btn" title="GitHub Repository">
+                  <i data-lucide="github"></i>
+                </a>
+              </div>
+            </div>
+            <p class="project-desc">
+              Production-ready authentication system with Google & GitHub OAuth, JWT access and refresh token rotation, TOTP two-factor authentication (Google Authenticator), SendGrid transactional emails, role-based access control, and Zod validation.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">Next.js</span>
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Prisma</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">SendGrid</span>
+              <span class="tech-tag">Zod</span>
+              <span class="tech-tag">TOTP 2FA</span>
+            </div>
+          </div>
+
+          <!-- 2. RoomFinder (Mero Room) -->
+          <div class="project-card">
+            <div class="project-card-header">
+              <a href="https://meroroom.vercel.app/" target="_blank" class="project-title">
+                RoomFinder (Mero Room)
+                <i data-lucide="arrow-up-right"></i>
+              </a>
+              <div class="project-links">
+                <a href="https://meroroom.vercel.app/" target="_blank" class="project-link-btn" title="Live Preview">
+                  <i data-lucide="external-link"></i>
+                </a>
+              </div>
+            </div>
+            <p class="project-desc">
+              Room rental platform for the Nepal market with dedicated landlord and tenant workflows, Clerk authentication, role-based access control, debounced search, filtering, pagination, wishlist tracking, and Cloudinary image uploads.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">Next.js</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">Clerk Auth</span>
+              <span class="tech-tag">Cloudinary</span>
+            </div>
+          </div>
+
+          <!-- 3. URL Shortener (Sanolink) -->
+          <div class="project-card">
+            <div class="project-card-header">
+              <a href="https://sanolink.vercel.app/" target="_blank" class="project-title">
+                Sanolink — URL Shortener
+                <i data-lucide="arrow-up-right"></i>
+              </a>
+              <div class="project-links">
+                <a href="https://sanolink.vercel.app/" target="_blank" class="project-link-btn" title="Live Preview">
+                  <i data-lucide="external-link"></i>
+                </a>
+              </div>
+            </div>
+            <p class="project-desc">
+              High-performance URL shortening service with instant redirects, optional user accounts, QR code generation with PNG downloads, click tracking analytics, Redis caching, and PostgreSQL database persistence.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">TSOA</span>
+              <span class="tech-tag">TypeORM</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">Redis Caching</span>
+            </div>
+          </div>
+
+          <!-- 4. Crop Disease Detection (GreenBidu) -->
+          <div class="project-card">
+            <div class="project-card-header">
+              <a href="https://greenbidu.vercel.app/" target="_blank" class="project-title">
+                GreenBidu — Crop Disease Detection
+                <i data-lucide="arrow-up-right"></i>
+              </a>
+              <div class="project-links">
+                <a href="https://greenbidu.vercel.app/" target="_blank" class="project-link-btn" title="Live Preview">
+                  <i data-lucide="external-link"></i>
+                </a>
+              </div>
+            </div>
+            <p class="project-desc">
+              Crop disease detection platform analyzing crop images with a CNN model, FastAPI backend, Node.js/Express APIs, MongoDB persistence, JWT authentication, and bilingual guidance advice based on predictions.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">CNN</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">MERN Stack</span>
+              <span class="tech-tag">MongoDB</span>
+            </div>
+          </div>
+
+          <!-- 5. Gemini AI Chatbot -->
+          <div class="project-card">
+            <div class="project-card-header">
+              <span class="project-title">
+                Gemini AI Chatbot
+              </span>
+              <div class="project-links">
+                <a href="https://github.com/Subodh-Dhamala" target="_blank" class="project-link-btn" title="GitHub">
+                  <i data-lucide="github"></i>
+                </a>
+              </div>
+            </div>
+            <p class="project-desc">
+              Full-stack AI chatbot connecting a React frontend to the Google Gemini API through a Node.js/Express backend with server-side request handling and markdown response formatting.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Express.js</span>
+              <span class="tech-tag">Google Gemini API</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 3. Skills Section -->
+      <section id="skills" class="section">
+        <div class="section-header">
+          <div class="section-label">Technical Skills</div>
+          <h2 class="section-title">What I Work With</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-category">
+            <div class="skill-group-title">
+              <i data-lucide="layout"></i>
+              <span>Frontend</span>
+            </div>
+            <div class="skill-group-items">
+              React.js, Next.js, TypeScript, Tailwind CSS, TanStack Router, HTML5, CSS3, Ant Design
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-group-title">
+              <i data-lucide="server"></i>
+              <span>Backend</span>
+            </div>
+            <div class="skill-group-items">
+              Node.js, Express.js, FastAPI, TSOA, REST APIs, MVC Architecture
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-group-title">
+              <i data-lucide="database"></i>
+              <span>Databases & Caching</span>
+            </div>
+            <div class="skill-group-items">
+              PostgreSQL, MongoDB, Redis, Prisma, TypeORM, MySQL
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-group-title">
+              <i data-lucide="shield-check"></i>
+              <span>Auth & Security</span>
+            </div>
+            <div class="skill-group-items">
+              Clerk, OAuth 2.0, JWT & Rotation, TOTP 2FA, RBAC, Zod
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-group-title">
+              <i data-lucide="terminal"></i>
+              <span>AI / ML & DevOps</span>
+            </div>
+            <div class="skill-group-items">
+              Google Gemini API, scikit-learn, CNN, Docker, Linux, Git, CI/CD, Socket.IO
+            </div>
+          </div>
+        </div>
+
+        <div class="experience-callout">
+          <div class="experience-callout-title">
+            <span>Experience: Full-Stack Developer Intern &bull; Stradmont Solutions (3 Months)</span>
+            <span style="font-size: 0.78rem; color: var(--text-muted);">Nepal</span>
+          </div>
+          <div class="experience-callout-desc">
+            Contributed to Builderbase SaaS platform across backend services, PostgreSQL models, REST APIs, real-time Redis/Socket.IO notifications, and React/TanStack Router dashboards.
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Contact Section -->
+      <section id="contact" class="section">
+        <div class="contact-box">
+          <div class="section-label">Contact</div>
+          <h2 class="contact-heading">Have an idea? Let's build something.</h2>
+          <p class="contact-text">
+            I'm currently available for full-stack engineering roles, projects, and collaborations.
+          </p>
+
+          <div class="contact-email-row">
+            <div>
+              <div style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600; margin-bottom: 2px;">Email</div>
+              <a href="mailto:subodhdhamala@gmail.com" class="contact-email-address">
+                subodhdhamala@gmail.com
+              </a>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <a href="mailto:subodhdhamala@gmail.com" class="btn btn-primary" style="padding: 6px 14px; font-size: 0.82rem;">
+                <i data-lucide="send"></i> Send Email
+              </a>
+              <button id="copy-email-btn" class="btn" style="padding: 6px 12px; font-size: 0.82rem;">
+                <i data-lucide="copy"></i> Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="contact-social-row">
+            <a href="https://github.com/Subodh-Dhamala" target="_blank" class="contact-social-pill">
+              <i data-lucide="github"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/subodhdhamala/" target="_blank" class="contact-social-pill">
+              <i data-lucide="linkedin"></i> LinkedIn
+            </a>
+            <a href="https://www.facebook.com/hdobus007" target="_blank" class="contact-social-pill">
+              <i data-lucide="facebook"></i> Facebook
+            </a>
+            <a href="https://x.com/subodhdhamala" target="_blank" class="contact-social-pill">
+              <i data-lucide="twitter"></i> X / Twitter
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- In-Site PDF CV Modal Viewer -->
+  <div id="cv-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="cv-modal-title">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <i data-lucide="file-text"></i>
+          <span id="cv-modal-title">Subodh_Dhamala_CV.pdf</span>
+        </div>
+        <div class="modal-actions">
+          <a href="./assets/Subodh_Dhamala_CV.pdf" target="_blank" class="btn" style="padding: 5px 11px; font-size: 0.8rem;">
+            <i data-lucide="external-link"></i> Open Tab
+          </a>
+          <a href="./assets/Subodh_Dhamala_CV.pdf" download="Subodh_Dhamala_CV.pdf" class="btn" style="padding: 5px 11px; font-size: 0.8rem;">
+            <i data-lucide="download"></i> Download
+          </a>
+          <button id="cv-modal-close" class="modal-close-btn" aria-label="Close modal">
+            <i data-lucide="x"></i>
+          </button>
         </div>
       </div>
-      <div class="heroImg">
-        <img src="./assets/profile.jpg" alt="Profile" />
-      </div>
-    </section>
-
-    <footer>
-      <div class="socials">
-        <a href="https://www.facebook.com/hdobus007" target="_blank"><img src="./assets/facebook.png" alt="Facebook" /></a>
-        <a href="https://www.linkedin.com/in/subodhdhamala/" target="_blank"><img src="./assets/linkedin.png" alt="LinkedIn" /></a>
-        <a href="https://x.com/subodhdhamala" target="_blank"><img src="./assets/twitter.png" alt="X" /></a>
-        <a href="https://github.com/Subodh-Dhamala" target="_blank"><img src="./assets/github.png" alt="GitHub" /></a>
-      </div>
-      <div class="copyright"><p>&copy; 2026 Subodh</p></div>
-    </footer>
+      <iframe src="./assets/Subodh_Dhamala_CV.pdf#toolbar=1" class="pdf-viewer-frame" title="Subodh Dhamala CV"></iframe>
+    </div>
   </div>
+
+  <!-- Minimal Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span>Subodh Dhamala &copy; 2026</span>
+        <div class="footer-links">
+          <a href="https://github.com/Subodh-Dhamala" target="_blank" class="footer-link">GitHub</a>
+          <a href="https://www.linkedin.com/in/subodhdhamala/" target="_blank" class="footer-link">LinkedIn</a>
+          <a href="https://www.facebook.com/hdobus007" target="_blank" class="footer-link">Facebook</a>
+          <a href="https://x.com/subodhdhamala" target="_blank" class="footer-link">Twitter</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script src="./script.js"></script>
 </body>
 </html>
-
-
