@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   initBackToTop();
   initKeyboardShortcuts();
+  initCurrentYear();
 });
 
 /* Lucide Icons Initializer */
@@ -20,6 +21,11 @@ function initIcons() {
   if (window.lucide) {
     window.lucide.createIcons();
   }
+}
+
+function initCurrentYear() {
+  const year = document.getElementById('current-year');
+  if (year) year.textContent = new Date().getFullYear();
 }
 
 /* Theme Switcher */
