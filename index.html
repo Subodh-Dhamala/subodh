@@ -4,9 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Subodh Dhamala — Full-Stack Developer</title>
-  <meta name="description" content="Subodh Dhamala — Full-Stack Developer. I make ideas happen." />
+  <meta name="description" content="Subodh Dhamala — Full-Stack Developer based in Bhaktapur, Nepal. Experienced in Next.js, React, Node.js, Python, PostgreSQL, and scalable web architectures." />
   
-  <link rel="stylesheet" href="./styles.css?v=1.1" />
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://subodhdhamala.com.np/" />
+  <meta property="og:title" content="Subodh Dhamala — Full-Stack Developer" />
+  <meta property="og:description" content="I make ideas happen. Full-stack developer building robust web applications and production systems." />
+  <meta property="og:image" content="./assets/profile.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:url" content="https://subodhdhamala.com.np/" />
+  <meta property="twitter:title" content="Subodh Dhamala — Full-Stack Developer" />
+  <meta property="twitter:description" content="I make ideas happen. Full-stack developer building robust web applications and production systems." />
+  <meta property="twitter:image" content="./assets/profile.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236366f1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polygon points='12 2 2 7 12 12 22 7 12 2'/><polyline points='2 17 12 22 22 17'/><polyline points='2 12 12 17 22 12'/></svg>" />
+
+  <!-- Stylesheet & Icons -->
+  <link rel="stylesheet" href="./styles.css?v=1.2" />
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
@@ -17,18 +35,21 @@
       <nav class="nav-wrapper">
         <a href="#hero" class="nav-logo">
           <span class="nav-logo-dot"></span>
-          <span>Subodh Dhamala</span>
+          <span>सुबोध धमला</span>
         </a>
 
         <ul class="nav-menu">
+          <li><a href="#about" class="nav-item-link">About</a></li>
+          <li><a href="#experience" class="nav-item-link">Experience</a></li>
           <li><a href="#projects" class="nav-item-link">Projects</a></li>
           <li><a href="#skills" class="nav-item-link">Skills</a></li>
+          <li><a href="#education" class="nav-item-link">Education</a></li>
           <li><a href="#contact" class="nav-item-link">Contact</a></li>
           <li><a href="#" data-open-cv class="nav-item-link">CV</a></li>
         </ul>
 
         <div class="nav-actions">
-          <button class="btn-icon theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <button class="btn-icon theme-toggle" aria-label="Toggle theme" title="Toggle theme (Press T)">
             <i data-lucide="sun" class="icon-sun"></i>
             <i data-lucide="moon" class="icon-moon"></i>
           </button>
@@ -41,7 +62,7 @@
     </div>
   </header>
 
-  <!-- Main Content Flow: Hero -> Projects -> Skills -> Contact -->
+  <!-- Main Content Flow -->
   <main>
     <div class="container">
       
@@ -55,7 +76,7 @@
             </div>
 
             <h1 class="hero-name">
-              Subodh Dhamala <span class="nepali-inline">सुबोध धमला</span>
+              <span class="nepali-inline">सुबोध धमला</span>
             </h1>
             <div class="hero-tagline">“I make ideas happen.”</div>
             <p class="hero-bio">
@@ -80,6 +101,9 @@
                 <a href="https://www.linkedin.com/in/subodhdhamala/" target="_blank" class="social-icon-btn" title="LinkedIn" aria-label="LinkedIn">
                   <i data-lucide="linkedin"></i>
                 </a>
+                <a href="https://x.com/subodhdhamala" target="_blank" class="social-icon-btn" title="Twitter / X" aria-label="Twitter">
+                  <i data-lucide="twitter"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -90,22 +114,92 @@
         </div>
       </section>
 
-      <!-- 2. Selected Projects Section -->
+      <!-- 2. About Section -->
+      <section id="about" class="section">
+        <div class="section-header">
+          <div class="section-label">
+            <i data-lucide="user"></i>
+            <span>About Me</span>
+          </div>
+          <h2 class="section-title">Turning Concepts into Software</h2>
+        </div>
+
+        <p style="margin-bottom: 14px; font-size: 0.96rem; line-height: 1.7;">
+          I'm a full-stack developer from <strong>Bhaktapur, Nepal</strong>, focused on building reliable web applications from interface to database.
+        </p>
+        <p style="font-size: 0.96rem; line-height: 1.7;">
+          I work with React, Node.js, Python, PostgreSQL, REST APIs, authentication, and real-time systems, with hands-on experience contributing to production SaaS platforms.
+        </p>
+      </section>
+
+      <!-- 3. Experience Section -->
+      <section id="experience" class="section">
+        <div class="section-header">
+          <div class="section-label">
+            <i data-lucide="briefcase"></i>
+            <span>Work Experience</span>
+          </div>
+          <h2 class="section-title">Where I've Contributed</h2>
+          <p class="section-desc">Hands-on engineering contributions to production SaaS software.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div class="timeline-role">Full-Stack Developer Intern</div>
+                <div class="timeline-date">3 Months</div>
+              </div>
+              <div class="timeline-company">
+                <i data-lucide="building-2" style="width: 14px; height: 14px;"></i>
+                <span>Stradmont Solutions — Builderbase SaaS</span>
+              </div>
+              <div class="timeline-body">
+                <p>Contributed to the <strong>Builderbase</strong> SaaS platform across backend services, PostgreSQL models, REST APIs, real-time Redis/Socket.IO notifications, and React/TanStack Router dashboards:</p>
+                <ul>
+                  <li>Engineered robust RESTful backend APIs and scalable PostgreSQL database models.</li>
+                  <li>Implemented real-time notification pipelines and event streaming using Redis and Socket.IO.</li>
+                  <li>Built responsive client interfaces, CRM, Inquiry system and dashboard views utilizing React, TypeScript, and TanStack Router.</li>
+                  <li>Participated in code reviews, architecture discussions, and continuous deployment workflows.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Selected Projects Section -->
       <section id="projects" class="section">
         <div class="section-header">
-          <div class="section-label">Selected Projects</div>
-          <h2 class="section-title">What I Build</h2>
+          <div class="section-label">
+            <i data-lucide="folder-git-2"></i>
+            <span>Featured Work</span>
+          </div>
+          <h2 class="section-title">Selected Projects</h2>
+          <p class="section-desc">Production platforms, authentication architectures, and intelligent systems.</p>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="project-filters">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+          <button class="filter-btn" data-filter="saas">SaaS & Security</button>
+          <button class="filter-btn" data-filter="ai">AI & Python</button>
         </div>
 
         <div class="projects-list">
           
-          <!-- 1. Full-Stack Authentication System -->
-          <div class="project-card">
+          <!-- 1. Full-Stack Auth App -->
+          <div class="project-card" data-category="fullstack saas">
             <div class="project-card-header">
-              <a href="https://github.com/Subodh-Dhamala/Full-Stack-Authentication-App" target="_blank" class="project-title">
-                Full-Stack Authentication System
-                <i data-lucide="arrow-up-right"></i>
-              </a>
+              <div class="project-title-group">
+                <a href="https://github.com/Subodh-Dhamala/Full-Stack-Authentication-App" target="_blank" class="project-title">
+                  Full-Stack Authentication System
+                  <i data-lucide="arrow-up-right"></i>
+                </a>
+                <span class="project-badge">Security / SaaS</span>
+              </div>
               <div class="project-links">
                 <a href="https://github.com/Subodh-Dhamala/Full-Stack-Authentication-App" target="_blank" class="project-link-btn" title="GitHub Repository">
                   <i data-lucide="github"></i>
@@ -113,7 +207,7 @@
               </div>
             </div>
             <p class="project-desc">
-              Production-ready authentication system with Google & GitHub OAuth, JWT access and refresh token rotation, TOTP two-factor authentication (Google Authenticator), SendGrid transactional emails, role-based access control, and Zod validation.
+              Production-ready authentication system with Google & GitHub OAuth, JWT access and refresh token rotation, TOTP two-factor authentication (Google Authenticator), SendGrid transactional emails, role-based access control (RBAC), and Zod schema validation.
             </p>
             <div class="project-tech-tags">
               <span class="tech-tag">Next.js</span>
@@ -127,12 +221,15 @@
           </div>
 
           <!-- 2. RoomFinder (Mero Room) -->
-          <div class="project-card">
+          <div class="project-card" data-category="fullstack saas">
             <div class="project-card-header">
-              <a href="https://meroroom.vercel.app/" target="_blank" class="project-title">
-                RoomFinder (Mero Room)
-                <i data-lucide="arrow-up-right"></i>
-              </a>
+              <div class="project-title-group">
+                <a href="https://meroroom.vercel.app/" target="_blank" class="project-title">
+                  RoomFinder (Mero Room)
+                  <i data-lucide="arrow-up-right"></i>
+                </a>
+                <span class="project-badge">Live SaaS</span>
+              </div>
               <div class="project-links">
                 <a href="https://meroroom.vercel.app/" target="_blank" class="project-link-btn" title="Live Preview">
                   <i data-lucide="external-link"></i>
@@ -140,7 +237,7 @@
               </div>
             </div>
             <p class="project-desc">
-              Room rental platform for the Nepal market with dedicated landlord and tenant workflows, Clerk authentication, role-based access control, debounced search, filtering, pagination, wishlist tracking, and Cloudinary image uploads.
+              Room and flat rental marketplace tailored for the Nepal market. Features dedicated landlord and tenant workflows, Clerk authentication, debounced live search, geospatial filtering, pagination, user wishlist tracking, and Cloudinary media management.
             </p>
             <div class="project-tech-tags">
               <span class="tech-tag">Next.js</span>
@@ -151,13 +248,16 @@
             </div>
           </div>
 
-          <!-- 3. URL Shortener (Sanolink) -->
-          <div class="project-card">
+          <!-- 3. Sanolink (URL Shortener) -->
+          <div class="project-card" data-category="fullstack saas">
             <div class="project-card-header">
-              <a href="https://sanolink.vercel.app/" target="_blank" class="project-title">
-                Sanolink — URL Shortener
-                <i data-lucide="arrow-up-right"></i>
-              </a>
+              <div class="project-title-group">
+                <a href="https://sanolink.vercel.app/" target="_blank" class="project-title">
+                  Sanolink — Fast URL Shortener
+                  <i data-lucide="arrow-up-right"></i>
+                </a>
+                <span class="project-badge">Utility SaaS</span>
+              </div>
               <div class="project-links">
                 <a href="https://sanolink.vercel.app/" target="_blank" class="project-link-btn" title="Live Preview">
                   <i data-lucide="external-link"></i>
@@ -165,24 +265,27 @@
               </div>
             </div>
             <p class="project-desc">
-              High-performance URL shortening service with instant redirects, optional user accounts, QR code generation with PNG downloads, click tracking analytics, Redis caching, and PostgreSQL database persistence.
+              High-performance URL shortening service with sub-millisecond redirects, custom slug support, dynamic QR code generator with PNG downloads, click tracking analytics, Redis caching layer, and PostgreSQL persistence.
             </p>
             <div class="project-tech-tags">
               <span class="tech-tag">TypeScript</span>
               <span class="tech-tag">TSOA</span>
               <span class="tech-tag">TypeORM</span>
               <span class="tech-tag">PostgreSQL</span>
-              <span class="tech-tag">Redis Caching</span>
+              <span class="tech-tag">Redis</span>
             </div>
           </div>
 
-          <!-- 4. Crop Disease Detection (GreenBidu) -->
-          <div class="project-card">
+          <!-- 4. GreenBidu (Crop Disease Detection) -->
+          <div class="project-card" data-category="ai fullstack">
             <div class="project-card-header">
-              <a href="https://greenbidu.vercel.app/" target="_blank" class="project-title">
-                GreenBidu — Crop Disease Detection
-                <i data-lucide="arrow-up-right"></i>
-              </a>
+              <div class="project-title-group">
+                <a href="https://greenbidu.vercel.app/" target="_blank" class="project-title">
+                  GreenBidu — Crop Disease Detection
+                  <i data-lucide="arrow-up-right"></i>
+                </a>
+                <span class="project-badge">AI / Computer Vision</span>
+              </div>
               <div class="project-links">
                 <a href="https://greenbidu.vercel.app/" target="_blank" class="project-link-btn" title="Live Preview">
                   <i data-lucide="external-link"></i>
@@ -190,23 +293,26 @@
               </div>
             </div>
             <p class="project-desc">
-              Crop disease detection platform analyzing crop images with a CNN model, FastAPI backend, Node.js/Express APIs, MongoDB persistence, JWT authentication, and bilingual guidance advice based on predictions.
+              Agritech platform analyzing crop leaf images with a Convolutional Neural Network (CNN) model, FastAPI inference backend, Node.js/Express APIs, MongoDB persistence, JWT authentication, and bilingual diagnostic guidance.
             </p>
             <div class="project-tech-tags">
-              <span class="tech-tag">CNN</span>
-              <span class="tech-tag">FastAPI</span>
               <span class="tech-tag">Python</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">CNN / PyTorch</span>
               <span class="tech-tag">MERN Stack</span>
               <span class="tech-tag">MongoDB</span>
             </div>
           </div>
 
           <!-- 5. Gemini AI Chatbot -->
-          <div class="project-card">
+          <div class="project-card" data-category="ai fullstack">
             <div class="project-card-header">
-              <span class="project-title">
-                Gemini AI Chatbot
-              </span>
+              <div class="project-title-group">
+                <span class="project-title">
+                  Gemini AI Chatbot Assistant
+                </span>
+                <span class="project-badge">Generative AI</span>
+              </div>
               <div class="project-links">
                 <a href="https://github.com/Subodh-Dhamala" target="_blank" class="project-link-btn" title="GitHub">
                   <i data-lucide="github"></i>
@@ -214,7 +320,7 @@
               </div>
             </div>
             <p class="project-desc">
-              Full-stack AI chatbot connecting a React frontend to the Google Gemini API through a Node.js/Express backend with server-side request handling and markdown response formatting.
+              Full-stack AI assistant connecting a React interface to Google Gemini API through Node.js/Express backend with server-side stream handling, session state management, and real-time Markdown rendering.
             </p>
             <div class="project-tech-tags">
               <span class="tech-tag">React</span>
@@ -227,31 +333,45 @@
         </div>
       </section>
 
-      <!-- 3. Skills Section -->
+      <!-- 5. Skills Section -->
       <section id="skills" class="section">
         <div class="section-header">
-          <div class="section-label">Technical Skills</div>
-          <h2 class="section-title">What I Work With</h2>
+          <div class="section-label">
+            <i data-lucide="cpu"></i>
+            <span>Technical Toolkit</span>
+          </div>
+          <h2 class="section-title">Skills & Technologies</h2>
+          <p class="section-desc">Languages, frameworks, databases, and architectures I work with daily.</p>
         </div>
 
         <div class="skills-grid">
           <div class="skill-category">
             <div class="skill-group-title">
-              <i data-lucide="layout"></i>
-              <span>Frontend</span>
+              <i data-lucide="code-2"></i>
+              <span>Languages & Core</span>
             </div>
             <div class="skill-group-items">
-              React.js, Next.js, TypeScript, Tailwind CSS, TanStack Router, HTML5, CSS3, Ant Design
+              JavaScript, TypeScript, Python, Java, C#, .NET, C, C++, SQL, Data Structures & Algorithms
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <div class="skill-group-title">
+              <i data-lucide="layout"></i>
+              <span>Frontend Architecture</span>
+            </div>
+            <div class="skill-group-items">
+              React.js, Next.js, TypeScript, Tailwind CSS, TanStack Router, HTML5, CSS3, Ant Design, Responsive UI/UX
             </div>
           </div>
 
           <div class="skill-category">
             <div class="skill-group-title">
               <i data-lucide="server"></i>
-              <span>Backend</span>
+              <span>Backend & APIs</span>
             </div>
             <div class="skill-group-items">
-              Node.js, Express.js, FastAPI, TSOA, REST APIs, MVC Architecture
+              Node.js, Express.js, FastAPI, Python, TSOA, RESTful APIs, MVC Architecture, Microservices
             </div>
           </div>
 
@@ -261,17 +381,17 @@
               <span>Databases & Caching</span>
             </div>
             <div class="skill-group-items">
-              PostgreSQL, MongoDB, Redis, Prisma, TypeORM, MySQL
+              PostgreSQL, MongoDB, Redis, Prisma ORM, TypeORM, MySQL, Query Optimization
             </div>
           </div>
 
           <div class="skill-category">
             <div class="skill-group-title">
               <i data-lucide="shield-check"></i>
-              <span>Auth & Security</span>
+              <span>Security & Auth</span>
             </div>
             <div class="skill-group-items">
-              Clerk, OAuth 2.0, JWT & Rotation, TOTP 2FA, RBAC, Zod
+              Clerk Auth, OAuth 2.0 (Google/GitHub), JWT & Rotation, TOTP 2FA, RBAC, Zod Validation, Sanitization
             </div>
           </div>
 
@@ -281,43 +401,66 @@
               <span>AI / ML & DevOps</span>
             </div>
             <div class="skill-group-items">
-              Google Gemini API, scikit-learn, CNN, Docker, Linux, Git, CI/CD, Socket.IO
+              Google Gemini API, scikit-learn, CNN, Docker, Linux / Bash, Git / GitHub, CI/CD, Socket.IO
             </div>
-          </div>
-        </div>
-
-        <div class="experience-callout">
-          <div class="experience-callout-title">
-            <span>Experience: Full-Stack Developer Intern &bull; Stradmont Solutions (3 Months)</span>
-            <span style="font-size: 0.78rem; color: var(--text-muted);">Nepal</span>
-          </div>
-          <div class="experience-callout-desc">
-            Contributed to Builderbase SaaS platform across backend services, PostgreSQL models, REST APIs, real-time Redis/Socket.IO notifications, and React/TanStack Router dashboards.
           </div>
         </div>
       </section>
 
-      <!-- 4. Contact Section -->
+      <!-- 6. Education Section -->
+      <section id="education" class="section">
+        <div class="section-header">
+          <div class="section-label">
+            <i data-lucide="graduation-cap"></i>
+            <span>Academic Background</span>
+          </div>
+          <h2 class="section-title">Education</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div class="timeline-role">Bachelor of Information Technology (BIT)</div>
+                <div class="timeline-date">TU &bull; Nepal</div>
+              </div>
+              <div class="timeline-company">
+                <i data-lucide="school" style="width: 14px; height: 14px;"></i>
+                <span>Bhaktapur Multiple Campus &bull; Tribhuvan University</span>
+              </div>
+              <div class="timeline-body">
+                <p>Comprehensive computer science foundation covering Data Structures & Algorithms, Database Management Systems, Operating Systems, Web Technologies, Computer Networks, and Artificial Intelligence.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Contact Section -->
       <section id="contact" class="section">
         <div class="contact-box">
-          <div class="section-label">Contact</div>
+          <div class="section-label">
+            <i data-lucide="send"></i>
+            <span>Get in Touch</span>
+          </div>
           <h2 class="contact-heading">Have an idea? Let's build something.</h2>
           <p class="contact-text">
-            I'm currently available for full-stack engineering roles, projects, and collaborations.
+            I'm currently available for full-stack engineering roles, freelance projects, and collaborations. Feel free to reach out directly.
           </p>
 
           <div class="contact-email-row">
             <div>
-              <div style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600; margin-bottom: 2px;">Email</div>
+              <div style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600; margin-bottom: 2px;">Direct Email</div>
               <a href="mailto:subodhdhamala@gmail.com" class="contact-email-address">
                 subodhdhamala@gmail.com
               </a>
             </div>
             <div style="display: flex; gap: 8px;">
-              <a href="mailto:subodhdhamala@gmail.com" class="btn btn-primary" style="padding: 6px 14px; font-size: 0.82rem;">
+              <a href="mailto:subodhdhamala@gmail.com" class="btn btn-primary" style="padding: 7px 14px; font-size: 0.82rem;">
                 <i data-lucide="send"></i> Send Email
               </a>
-              <button id="copy-email-btn" class="btn" style="padding: 6px 12px; font-size: 0.82rem;">
+              <button id="copy-email-btn" class="btn" style="padding: 7px 12px; font-size: 0.82rem;">
                 <i data-lucide="copy"></i> Copy
               </button>
             </div>
@@ -330,11 +473,11 @@
             <a href="https://www.linkedin.com/in/subodhdhamala/" target="_blank" class="contact-social-pill">
               <i data-lucide="linkedin"></i> LinkedIn
             </a>
+            <a href="https://x.com/subodhdhamala" target="_blank" class="contact-social-pill">
+              <i data-lucide="twitter"></i> Twitter / X
+            </a>
             <a href="https://www.facebook.com/hdobus007" target="_blank" class="contact-social-pill">
               <i data-lucide="facebook"></i> Facebook
-            </a>
-            <a href="https://x.com/subodhdhamala" target="_blank" class="contact-social-pill">
-              <i data-lucide="twitter"></i> X / Twitter
             </a>
           </div>
         </div>
@@ -367,21 +510,26 @@
     </div>
   </div>
 
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
+    <i data-lucide="arrow-up"></i>
+  </button>
+
   <!-- Minimal Footer -->
   <footer>
     <div class="container">
       <div class="footer-inner">
-        <span>Subodh Dhamala &copy; 2026</span>
+        <span>Subodh Dhamala &copy; 2026 &bull; Kathmandu / Bhaktapur, Nepal</span>
         <div class="footer-links">
           <a href="https://github.com/Subodh-Dhamala" target="_blank" class="footer-link">GitHub</a>
           <a href="https://www.linkedin.com/in/subodhdhamala/" target="_blank" class="footer-link">LinkedIn</a>
-          <a href="https://www.facebook.com/hdobus007" target="_blank" class="footer-link">Facebook</a>
           <a href="https://x.com/subodhdhamala" target="_blank" class="footer-link">Twitter</a>
+          <a href="https://www.facebook.com/hdobus007" target="_blank" class="footer-link">Facebook</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="./script.js?v=1.1"></script>
+  <script src="./script.js?v=1.2"></script>
 </body>
 </html>

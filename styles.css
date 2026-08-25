@@ -523,19 +523,23 @@ header {
 .timeline-header {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: 6px;
   margin-bottom: 4px;
 }
 
 .timeline-role {
+  min-width: 0;
+  flex: 1 1 220px;
   font-size: 0.98rem;
   font-weight: 600;
   color: var(--text-primary);
 }
 
 .timeline-date {
+  flex: 0 0 auto;
+  white-space: nowrap;
   font-family: var(--font-mono);
   font-size: 0.78rem;
   color: var(--text-muted);
@@ -1121,6 +1125,11 @@ footer {
 
   .timeline-dot {
     margin-left: 7px;
+  }
+
+  .timeline-header {
+    flex-direction: column;
+    gap: 4px;
   }
 
   .footer-inner {
