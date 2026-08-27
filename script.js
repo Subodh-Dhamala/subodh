@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initMobileMenu();
   initProjectFilters();
+  initMiniProjectsToggle();
   initPdfModal();
   initCopyEmail();
   initScrollSpy();
@@ -77,8 +78,10 @@ function initMobileMenu() {
 function initProjectFilters() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card[data-category]');
+  const miniWrapper = document.getElementById('mini-projects');
+  const projectsList = document.querySelector('.projects-list');
 
-  if (!filterBtns.length || !projectCards.length) return;
+  if (!filterBtns.length) return;
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -87,17 +90,104 @@ function initProjectFilters() {
 
       const filter = btn.getAttribute('data-filter');
 
-      projectCards.forEach(card => {
-        const categories = card.getAttribute('data-category').split(' ');
-        if (filter === 'all' || categories.includes(filter)) {
-          card.classList.remove('hidden');
-          card.style.animation = 'fadeIn 0.3s ease forwards';
-        } else {
-          card.classList.add('hidden');
+      if (filter === 'mini') {
+        // Hide featured projects list, show only mini section
+        if (projectsList) projectsList.style.display = 'none';
+        if (miniWrapper) {
+          miniWrapper.style.display = 'block';
+          // Expand all mini cards when filter is active
+          expandAllMiniCards();
         }
-      });
+      } else {
+        // Show featured projects, restore mini section
+        if (projectsList) projectsList.style.display = '';
+        if (miniWrapper) miniWrapper.style.display = '';
+
+        // Filter featured project cards
+        projectCards.forEach(card => {
+          const categories = card.getAttribute('data-category').split(' ');
+          if (filter === 'all' || categories.includes(filter)) {
+            card.classList.remove('hidden');
+            card.style.animation = 'fadeIn 0.3s ease forwards';
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      }
     });
   });
+}
+
+/* Mini Projects Toggle */
+const MINI_INITIAL_COUNT = 4;
+
+function initMiniProjectsToggle() {
+  const btn = document.getElementById('toggle-mini-btn');
+  const btnText = document.getElementById('mini-toggle-text');
+  const grid = document.getElementById('mini-grid');
+
+  if (!btn || !grid) return;
+
+  const allCards = Array.from(grid.querySelectorAll('.mini-card'));
+  const total = allCards.length;
+
+  // Hide cards beyond the initial count
+  allCards.forEach((card, i) => {
+    if (i >= MINI_INITIAL_COUNT) {
+      card.classList.add('mini-hidden');
+    }
+  });
+
+  // Hide toggle button if all fit
+  if (total <= MINI_INITIAL_COUNT) {
+    btn.style.display = 'none';
+    return;
+  }
+
+  let expanded = false;
+
+  btn.addEventListener('click', () => {
+    expanded = !expanded;
+    if (expanded) {
+      expandAllMiniCards();
+    } else {
+      // Collapse back to initial
+      allCards.forEach((card, i) => {
+        if (i >= MINI_INITIAL_COUNT) {
+          card.classList.remove('mini-reveal');
+          card.classList.add('mini-hidden');
+        }
+      });
+      btn.classList.remove('expanded');
+      if (btnText) btnText.textContent = `View All (${total})`;
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
+function expandAllMiniCards() {
+  const btn = document.getElementById('toggle-mini-btn');
+  const btnText = document.getElementById('mini-toggle-text');
+  const grid = document.getElementById('mini-grid');
+  if (!grid) return;
+
+  const allCards = Array.from(grid.querySelectorAll('.mini-card'));
+  let delay = 0;
+
+  allCards.forEach((card, i) => {
+    if (i >= MINI_INITIAL_COUNT) {
+      card.classList.remove('mini-hidden');
+      card.style.animationDelay = `${delay}ms`;
+      card.classList.add('mini-reveal');
+      delay += 40;
+    }
+  });
+
+  if (btn) {
+    btn.classList.add('expanded');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+  if (btnText) btnText.textContent = 'Show Less';
 }
 
 /* In-Site PDF Viewer Modal */

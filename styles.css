@@ -742,6 +742,248 @@ header {
   color: var(--text-secondary);
 }
 
+
+/* ==========================================================================
+   3.5 MINI PROJECTS SECTION
+   ========================================================================== */
+
+.mini-projects-wrapper {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.mini-projects-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.mini-header-info {
+  flex: 1;
+}
+
+.mini-header-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mini-header-badge i,
+.mini-header-badge svg {
+  width: 13px;
+  height: 13px;
+  color: var(--accent);
+}
+
+.mini-header-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 3px;
+}
+
+.mini-header-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.mini-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 13px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.mini-toggle-btn:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+  background: var(--bg-card-hover);
+}
+
+.mini-toggle-btn svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.25s var(--ease);
+}
+
+.mini-toggle-btn.expanded svg {
+  transform: rotate(180deg);
+}
+
+/* Grid */
+.mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+/* Cards */
+.mini-card {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  background-image: linear-gradient(135deg, var(--accent-subtle) 0%, transparent 60%);
+  background-size: 200% 200%;
+  background-position: 100% 100%;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.22s var(--ease), background-position 0.3s ease;
+  cursor: pointer;
+}
+
+.mini-card:hover {
+  border-color: var(--border-hover);
+  background-color: var(--bg-card-hover);
+  background-position: 0% 0%;
+  box-shadow: var(--shadow-card);
+  transform: translateY(-2px);
+}
+
+/* Collapsed: show only 4 initially */
+.mini-card.mini-hidden {
+  display: none;
+}
+
+.mini-card-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.mini-card-icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-subtle);
+  border: 1px solid rgba(99, 102, 241, 0.18);
+  flex-shrink: 0;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.mini-card:hover .mini-card-icon-wrap {
+  background: rgba(99, 102, 241, 0.22);
+  border-color: rgba(99, 102, 241, 0.35);
+}
+
+.mini-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--accent);
+}
+
+.mini-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex: 1;
+  min-width: 0;
+}
+
+.mini-card-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mini-card-badge {
+  font-size: 0.65rem;
+  font-weight: 500;
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+  background: var(--bg-badge);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.mini-card-arrow {
+  width: 13px;
+  height: 13px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-left: auto;
+  transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.mini-card:hover .mini-card-arrow {
+  color: var(--accent);
+  transform: translate(2px, -2px);
+}
+
+.mini-card-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.mini-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Fade-in for revealed cards */
+@keyframes miniCardIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+.mini-card.mini-reveal {
+  animation: miniCardIn 0.25s var(--ease) forwards;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .mini-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
 /* ==========================================================================
    4. SKILLS SECTION
    ========================================================================= */
