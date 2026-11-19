@@ -1851,3 +1851,126 @@ footer {
   body { background: white; color: black; }
   .section { break-inside: avoid; }
 }
+
+/* Minimal portfolio refresh */
+[hidden],
+#architecture,
+#tech-stack,
+#github,
+#mini-projects {
+  display: none !important;
+}
+
+.container,
+.nav-wrapper {
+  max-width: 880px;
+}
+
+.section {
+  padding-top: 40px;
+  margin-bottom: 36px;
+}
+
+.section-header {
+  margin-bottom: 20px;
+}
+
+.hero-section {
+  padding: 64px 0 48px;
+}
+
+#hero-canvas {
+  display: none;
+}
+
+.hero-status {
+  margin-bottom: 20px;
+}
+
+.hero-name {
+  font-size: clamp(2.4rem, 7vw, 3.5rem);
+  margin-bottom: 12px;
+}
+
+.hero-tagline {
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.hero-bio {
+  max-width: 560px;
+  font-size: 0.96rem;
+}
+
+.project-filters {
+  margin-bottom: 14px;
+}
+
+.projects-list {
+  gap: 10px;
+}
+
+.projects-list .project-card:nth-child(7) {
+  order: -2;
+}
+
+.projects-list .project-card:nth-child(8) {
+  order: -1;
+}
+
+.project-card {
+  padding: 18px 20px;
+  box-shadow: none;
+}
+
+.project-card::before {
+  display: none;
+}
+
+.project-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.tech-logo-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.tech-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+}
+
+.tech-logo img {
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+}
+
+.tech-logo img.aws-logo {
+  filter: invert(62%) sepia(88%) saturate(1016%) hue-rotate(359deg) brightness(101%) contrast(106%);
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-top: 32px;
+    margin-bottom: 28px;
+  }
+
+  .hero-section {
+    padding: 40px 0 32px;
+  }
+}

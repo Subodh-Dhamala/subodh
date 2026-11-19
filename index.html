@@ -4,24 +4,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Subodh Dhamala — Full-Stack Developer</title>
+  <title>Subodh Dhamala — Software Engineer</title>
   <meta name="description"
-    content="Subodh Dhamala — Full-Stack Developer based in Bhaktapur, Nepal. Experienced in Next.js, React, Node.js, Python, PostgreSQL, and scalable web architectures." />
+    content="Subodh Dhamala is a software engineer from Nepal interested in backend engineering, system design, AWS, and building reliable products." />
 
   <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://subodhdhamala.com.np/" />
-  <meta property="og:title" content="Subodh Dhamala — Full-Stack Developer" />
+  <meta property="og:title" content="Subodh Dhamala — Software Engineer" />
   <meta property="og:description"
-    content="I make ideas happen. Full-stack developer building robust web applications and production systems." />
+    content="Software engineer interested in backend engineering, system design, AWS, and building reliable products." />
   <meta property="og:image" content="./assets/profile.jpg" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary" />
   <meta property="twitter:url" content="https://subodhdhamala.com.np/" />
-  <meta property="twitter:title" content="Subodh Dhamala — Full-Stack Developer" />
+  <meta property="twitter:title" content="Subodh Dhamala — Software Engineer" />
   <meta property="twitter:description"
-    content="I make ideas happen. Full-stack developer building robust web applications and production systems." />
+    content="Software engineer interested in backend engineering, system design, AWS, and building reliable products." />
   <meta property="twitter:image" content="./assets/profile.jpg" />
 
   <!-- Favicon -->
@@ -29,7 +29,7 @@
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236366f1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polygon points='12 2 2 7 12 12 22 7 12 2'/><polyline points='2 17 12 22 22 17'/><polyline points='2 12 12 17 22 12'/></svg>" />
 
   <!-- Stylesheet & Icons -->
-  <link rel="stylesheet" href="./styles.css?v=2.0" />
+  <link rel="stylesheet" href="./styles.css?v=3.0" />
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
@@ -46,13 +46,11 @@
 
         <ul class="nav-menu">
           <li><a href="#about" class="nav-item-link">About</a></li>
-          <li><a href="#experience" class="nav-item-link">Experience</a></li>
           <li><a href="#projects" class="nav-item-link">Projects</a></li>
-          <li><a href="#architecture" class="nav-item-link">Architecture</a></li>
           <li><a href="#skills" class="nav-item-link">Skills</a></li>
-          <li><a href="#philosophy" class="nav-item-link">Philosophy</a></li>
+          <li><a href="#experience" class="nav-item-link">Experience</a></li>
           <li><a href="#contact" class="nav-item-link">Contact</a></li>
-          <li><a href="#" data-open-cv class="nav-item-link">CV</a></li>
+          <li><a href="./assets/Subodh_Dhamala_CV.pdf" target="_blank" rel="noopener noreferrer" class="nav-item-link">CV</a></li>
         </ul>
 
         <div class="nav-actions">
@@ -88,10 +86,10 @@
             <h1 class="hero-name">
               <span class="nepali-inline">सुबोध धमला</span>
             </h1>
-            <div class="hero-tagline">"I make ideas happen."</div>
+            <p class="hero-tagline">I make ideas happen.</p>
             <p class="hero-bio">
-              Full-stack developer building complete, reliable web applications. Experienced in Next.js, React, Node.js,
-              Python, PostgreSQL, and real-time architectures.
+              Full-stack developer building reliable web applications with Next.js, React, Node.js, Python, and
+              PostgreSQL. Currently diving in system design and AWS.
             </p>
 
             <div class="hero-actions">
@@ -101,9 +99,9 @@
               <a href="#contact" class="btn">
                 <i data-lucide="mail"></i> Contact Me
               </a>
-              <button class="btn" data-open-cv>
+              <a class="btn" href="./assets/Subodh_Dhamala_CV.pdf" target="_blank" rel="noopener noreferrer">
                 <i data-lucide="file-text"></i> View CV
-              </button>
+              </a>
 
               <div class="social-links-inline">
                 <a href="https://github.com/Subodh-Dhamala" target="_blank" class="social-icon-btn" title="GitHub"
@@ -140,12 +138,10 @@
 
         <div class="about-body">
           <p>
-            I'm a full-stack developer from <strong>Nepal</strong>, focused on building reliable web applications from
-            interface to database.
+            I'm a software engineer from <strong>Nepal</strong>, focused on backend development and building reliable applications from interface to database.
           </p>
           <p>
-            I work with React, Node.js, Python, PostgreSQL, REST APIs, authentication, and real-time systems, with
-            hands-on experience contributing to production SaaS platforms.
+            I'm especially interested in <strong>system design</strong>: data modeling, concurrency, background jobs, and the trade-offs behind dependable services. I also work with AWS and modern cloud tooling.
           </p>
         </div>
       </section>
@@ -186,6 +182,18 @@
               </div>
             </div>
           </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div class="timeline-role">Technical Coordinator</div>
+              </div>
+              <div class="timeline-company">
+                <i data-lucide="users"></i>
+                <span>AWS Student Builder Group, Bhaktapur Multiple Campus</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -197,16 +205,14 @@
             <span>Featured Work</span>
           </div>
           <h2 class="section-title">Selected Projects</h2>
-          <p class="section-desc">Production platforms, authentication architectures, and intelligent systems.</p>
+          <p class="section-desc">A few products and backend systems I've built.</p>
         </div>
 
         <!-- Category Filters -->
         <div class="project-filters">
           <button class="filter-btn active" data-filter="all">All Projects</button>
           <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
-          <button class="filter-btn" data-filter="saas">SaaS & Security</button>
-          <button class="filter-btn" data-filter="ai">AI & Python</button>
-          <button class="filter-btn" data-filter="mini">Mini Apps (10)</button>
+          <button class="filter-btn" data-filter="backend">Backend &amp; Systems</button>
         </div>
 
         <div class="projects-list">
@@ -653,6 +659,61 @@
             </div>
           </div>
 
+          <div class="project-card" data-category="fullstack backend">
+            <div class="project-card-header">
+              <div class="project-title-group">
+                <a href="https://github.com/Subodh-Dhamala/Concurrent-Movie-Booking-System" target="_blank" rel="noopener noreferrer" class="project-title">
+                  Concurrent Movie Booking System
+                  <i data-lucide="arrow-up-right"></i>
+                </a>
+                <span class="project-badge">Backend &amp; Systems</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Subodh-Dhamala/Concurrent-Movie-Booking-System" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="GitHub Repository" aria-label="Concurrent Movie Booking System on GitHub">
+                  <i data-lucide="github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <p class="project-desc">A cinema booking API built around safe concurrent reservations, PostgreSQL row locks, and expiring seat holds.</p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Redis</span>
+                <span class="tech-tag">BullMQ</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="fullstack backend ai">
+            <div class="project-card-header">
+              <div class="project-title-group">
+                <a href="https://github.com/Subodh-Dhamala/DevDiary" target="_blank" rel="noopener noreferrer" class="project-title">
+                  DevDiary
+                  <i data-lucide="arrow-up-right"></i>
+                </a>
+                <span class="project-badge">AI &amp; Backend</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/Subodh-Dhamala/DevDiary" target="_blank" rel="noopener noreferrer" class="project-link-btn" title="GitHub Repository" aria-label="DevDiary on GitHub">
+                  <i data-lucide="github"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-card-body">
+              <p class="project-desc">A developer notes API with semantic search and a Gemini-powered assistant, backed by PostgreSQL and pgvector.</p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">pgvector</span>
+                <span class="tech-tag">Gemini</span>
+                <span class="tech-tag">Docker</span>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <!-- Mini Projects & Interactive Apps Showcase -->
@@ -905,7 +966,7 @@
       </section>
 
       <!-- 5. NEW: System Architecture Explorer (D3) -->
-      <section id="architecture" class="section">
+      <section id="architecture" class="section" hidden>
         <div class="section-header">
           <div class="section-label">
             <i data-lucide="network"></i>
@@ -963,7 +1024,7 @@
               <span>Backend &amp; APIs</span>
             </div>
             <div class="skill-group-items">
-              Node.js, Express.js, FastAPI, Python, TSOA, RESTful APIs, MVC Architecture, Microservices
+              Node.js, Express.js, FastAPI, Python, TSOA, REST APIs, background workers
             </div>
           </div>
 
@@ -990,17 +1051,39 @@
           <div class="skill-category">
             <div class="skill-group-title">
               <i data-lucide="terminal"></i>
-              <span>AI / ML &amp; DevOps</span>
+              <span>System Design</span>
             </div>
             <div class="skill-group-items">
-              Google Gemini API, scikit-learn, CNN, Docker, Linux / Bash, Git / GitHub, CI/CD, Socket.IO
+              Data modeling, PostgreSQL row locking, concurrency, Redis queues, and dependable services
             </div>
           </div>
+
+          <div class="skill-category">
+            <div class="skill-group-title">
+              <i data-lucide="cloud"></i>
+              <span>Cloud &amp; DevOps</span>
+            </div>
+            <div class="skill-group-items">
+              AWS, Linux, Docker, GitHub Actions, CI/CD, Git, Bash, Kubernetes, Terraform
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-logo-list" aria-label="Technologies">
+          <span class="tech-logo"><img class="aws-logo" src="https://cdn.jsdelivr.net/npm/simple-icons@14/icons/amazonwebservices.svg" alt="" loading="lazy" />AWS</span>
+          <span class="tech-logo"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="" loading="lazy" />Docker</span>
+          <span class="tech-logo"><img src="https://cdn.simpleicons.org/typescript/3178C6" alt="" loading="lazy" />TypeScript</span>
+          <span class="tech-logo"><img src="https://cdn.simpleicons.org/nextdotjs/FFFFFF" alt="" loading="lazy" />Next.js</span>
+          <span class="tech-logo"><img src="https://cdn.simpleicons.org/python/3776AB" alt="" loading="lazy" />Python</span>
+          <span class="tech-logo"><img src="https://cdn.simpleicons.org/postgresql/4169E1" alt="" loading="lazy" />PostgreSQL</span>
+          <span class="tech-logo"><img src="https://cdn.simpleicons.org/redis/FF4438" alt="" loading="lazy" />Redis</span>
+          <span class="tech-logo"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="" loading="lazy" />React</span>
+          <span class="tech-logo"><img src="https://cdn.simpleicons.org/linux/FCC624" alt="" loading="lazy" />Linux</span>
         </div>
       </section>
 
       <!-- 6.5 NEW: Interactive Tech Stack Graph (D3) -->
-      <section id="tech-stack" class="section">
+      <section id="tech-stack" class="section" hidden>
         <div class="section-header">
           <div class="section-label">
             <i data-lucide="git-branch"></i>
@@ -1014,43 +1097,8 @@
         <div class="tech-panel arch-panel"></div>
       </section>
 
-      <!-- 6.6 NEW: Engineering Philosophy -->
-      <section id="philosophy" class="section">
-        <div class="section-header">
-          <div class="section-label">
-            <i data-lucide="compass"></i>
-            <span>How I Build</span>
-          </div>
-          <h2 class="section-title">Engineering Philosophy</h2>
-          <p class="section-desc">Four principles that guide how I design, write, and ship systems.</p>
-        </div>
-
-        <div class="philosophy-grid">
-          <div class="phil-card">
-            <div class="phil-number">01</div>
-            <h3 class="phil-title">Reliable</h3>
-            <p class="phil-desc">Systems designed for real usage — not just demos. Inputs are validated, errors are surfaced, and the happy path isn't the only path.</p>
-          </div>
-          <div class="phil-card">
-            <div class="phil-number">02</div>
-            <h3 class="phil-title">Scalable</h3>
-            <p class="phil-desc">Architecture that can grow with the product. Caching, async work, and clean service boundaries are decided early, not bolted on.</p>
-          </div>
-          <div class="phil-card">
-            <div class="phil-number">03</div>
-            <h3 class="phil-title">Secure</h3>
-            <p class="phil-desc">Authentication, validation, and access control are part of the system — not an afterthought. Secrets stay server-side, and inputs are never trusted.</p>
-          </div>
-          <div class="phil-card">
-            <div class="phil-number">04</div>
-            <h3 class="phil-title">Maintainable</h3>
-            <p class="phil-desc">Clear architecture and code that remains understandable six months later. Names that describe, boundaries that hold, and tests that catch regressions.</p>
-          </div>
-        </div>
-      </section>
-
       <!-- 6.7 NEW: GitHub Activity (Placeholder) -->
-      <section id="github" class="section">
+      <section id="github" class="section" hidden>
         <div class="section-header">
           <div class="section-label">
             <i data-lucide="github"></i>

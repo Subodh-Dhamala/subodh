@@ -5,8 +5,6 @@
  * scroll animations, keyboard shortcuts, architecture explorer.
  */
 
-import * as d3 from 'https://esm.run/d3@7';
-
 document.addEventListener('DOMContentLoaded', () => {
   initIcons();
   initTheme();
@@ -19,15 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initBackToTop();
   initKeyboardShortcuts();
   initCurrentYear();
-  initHeroParticleBackground();
   initScrollReveal();
   initProjectExpandables();
-  initArchitectureExplorer();
-  initTechStackGraph();
   initMiniProjectFilters();
-  initPhilosophySection();
-  initGitHubActivity();
-  initLazySections();
 });
 
 // --------------------------------------------------------------------
