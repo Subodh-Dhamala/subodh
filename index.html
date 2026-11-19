@@ -29,7 +29,7 @@
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236366f1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polygon points='12 2 2 7 12 12 22 7 12 2'/><polyline points='2 17 12 22 22 17'/><polyline points='2 12 12 17 22 12'/></svg>" />
 
   <!-- Stylesheet & Icons -->
-  <link rel="stylesheet" href="./styles.css?v=1.2" />
+  <link rel="stylesheet" href="./styles.css?v=2.0" />
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
@@ -48,8 +48,9 @@
           <li><a href="#about" class="nav-item-link">About</a></li>
           <li><a href="#experience" class="nav-item-link">Experience</a></li>
           <li><a href="#projects" class="nav-item-link">Projects</a></li>
+          <li><a href="#architecture" class="nav-item-link">Architecture</a></li>
           <li><a href="#skills" class="nav-item-link">Skills</a></li>
-          <li><a href="#education" class="nav-item-link">Education</a></li>
+          <li><a href="#philosophy" class="nav-item-link">Philosophy</a></li>
           <li><a href="#contact" class="nav-item-link">Contact</a></li>
           <li><a href="#" data-open-cv class="nav-item-link">CV</a></li>
         </ul>
@@ -60,7 +61,7 @@
             <i data-lucide="moon" class="icon-moon"></i>
           </button>
 
-          <button class="btn-icon mobile-toggle" aria-label="Toggle menu">
+          <button class="btn-icon mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
             <i data-lucide="menu"></i>
           </button>
         </div>
@@ -74,6 +75,9 @@
 
       <!-- 1. Hero Section -->
       <section id="hero" class="hero-section">
+        <!-- Subtle animated particle background (Canvas, no D3) -->
+        <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
         <div class="hero-header">
           <div class="hero-identity">
             <div class="hero-status">
@@ -84,7 +88,7 @@
             <h1 class="hero-name">
               <span class="nepali-inline">सुबोध धमला</span>
             </h1>
-            <div class="hero-tagline">“I make ideas happen.”</div>
+            <div class="hero-tagline">"I make ideas happen."</div>
             <p class="hero-bio">
               Full-stack developer building complete, reliable web applications. Experienced in Next.js, React, Node.js,
               Python, PostgreSQL, and real-time architectures.
@@ -119,7 +123,7 @@
           </div>
 
           <div class="hero-avatar">
-            <img src="./assets/profile.jpg" alt="Subodh Dhamala" />
+            <img src="./assets/profile.jpg" alt="Subodh Dhamala" loading="eager" />
           </div>
         </div>
       </section>
@@ -134,14 +138,16 @@
           <h2 class="section-title">Turning Concepts into Software</h2>
         </div>
 
-        <p style="margin-bottom: 14px; font-size: 0.96rem; line-height: 1.7;">
-          I'm a full-stack developer from <strong>Nepal</strong>, focused on building reliable web applications from
-          interface to database.
-        </p>
-        <p style="font-size: 0.96rem; line-height: 1.7;">
-          I work with React, Node.js, Python, PostgreSQL, REST APIs, authentication, and real-time systems, with
-          hands-on experience contributing to production SaaS platforms.
-        </p>
+        <div class="about-body">
+          <p>
+            I'm a full-stack developer from <strong>Nepal</strong>, focused on building reliable web applications from
+            interface to database.
+          </p>
+          <p>
+            I work with React, Node.js, Python, PostgreSQL, REST APIs, authentication, and real-time systems, with
+            hands-on experience contributing to production SaaS platforms.
+          </p>
+        </div>
       </section>
 
       <!-- 3. Experience Section -->
@@ -164,7 +170,7 @@
                 <div class="timeline-date">3 Months</div>
               </div>
               <div class="timeline-company">
-                <i data-lucide="building-2" style="width: 14px; height: 14px;"></i>
+                <i data-lucide="building-2"></i>
                 <span>Stradmont Solutions — BuildersBase SaaS</span>
               </div>
               <div class="timeline-body">
@@ -221,21 +227,68 @@
                   class="project-link-btn" title="GitHub Repository">
                   <i data-lucide="github"></i>
                 </a>
+                <button class="project-expand-btn" aria-expanded="false" aria-label="Toggle project details">
+                  <i data-lucide="chevron-down"></i>
+                </button>
               </div>
             </div>
-            <p class="project-desc">
-              Production-ready authentication system with Google & GitHub OAuth, JWT access and refresh token rotation,
-              TOTP two-factor authentication (Google Authenticator), SendGrid transactional emails, role-based access
-              control (RBAC), and Zod schema validation.
-            </p>
-            <div class="project-tech-tags">
-              <span class="tech-tag">Next.js</span>
-              <span class="tech-tag">TypeScript</span>
-              <span class="tech-tag">Prisma</span>
-              <span class="tech-tag">PostgreSQL</span>
-              <span class="tech-tag">SendGrid</span>
-              <span class="tech-tag">Zod</span>
-              <span class="tech-tag">TOTP 2FA</span>
+            <div class="project-card-body">
+              <p class="project-desc">
+                Production-ready authentication system with Google &amp; GitHub OAuth, JWT access and refresh token
+                rotation,
+                TOTP two-factor authentication (Google Authenticator), SendGrid transactional emails, role-based access
+                control (RBAC), and Zod schema validation.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Prisma</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">SendGrid</span>
+                <span class="tech-tag">Zod</span>
+                <span class="tech-tag">TOTP 2FA</span>
+              </div>
+            </div>
+            <div class="project-details">
+              <div class="project-details-inner">
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Problem</div>
+                  <div class="project-detail-text">Auth systems that look complete but leak at the seams: weak token handling, no 2FA, no role control, no input validation.</div>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Solution</div>
+                  <div class="project-detail-text">End-to-end auth with OAuth + rotating JWTs, TOTP 2FA, RBAC, Zod validation, and verified transactional email flows.</div>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Key Features</div>
+                  <div class="project-detail-text">OAuth (Google/GitHub), refresh-token rotation, RBAC, TOTP 2FA, Zod validation, SendGrid email verification.</div>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Stack</div>
+                  <div class="project-detail-text">Next.js + TypeScript UI, Express-style API, Prisma ORM, PostgreSQL persistence.</div>
+                </div>
+                <div class="architecture-flow">
+                  <span class="flow-node">User</span>
+                  <span class="flow-arrow"><i data-lucide="arrow-right"></i></span>
+                  <span class="flow-node">Next.js</span>
+                  <span class="flow-arrow"><i data-lucide="arrow-right"></i></span>
+                  <span class="flow-node">API</span>
+                  <span class="flow-arrow"><i data-lucide="arrow-right"></i></span>
+                  <span class="flow-node">Auth</span>
+                  <span class="flow-arrow"><i data-lucide="arrow-right"></i></span>
+                  <span class="flow-node">Prisma</span>
+                  <span class="flow-arrow"><i data-lucide="arrow-right"></i></span>
+                  <span class="flow-node">PostgreSQL</span>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Source</div>
+                  <div class="project-detail-text">
+                    <a href="https://github.com/Subodh-Dhamala/Full-Stack-Authentication-App" target="_blank" class="project-title" style="font-size: 0.85rem;">
+                      GitHub Repository <i data-lucide="arrow-up-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -253,19 +306,63 @@
                 <a href="https://meroroom.vercel.app/" target="_blank" class="project-link-btn" title="Live Preview">
                   <i data-lucide="external-link"></i>
                 </a>
+                <button class="project-expand-btn" aria-expanded="false" aria-label="Toggle project details">
+                  <i data-lucide="chevron-down"></i>
+                </button>
               </div>
             </div>
-            <p class="project-desc">
-              Room and flat rental marketplace tailored for the Nepal market. Features dedicated landlord and tenant
-              workflows, Clerk authentication, debounced live search, geospatial filtering, pagination, user wishlist
-              tracking, and Cloudinary media management.
-            </p>
-            <div class="project-tech-tags">
-              <span class="tech-tag">Next.js</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">MongoDB</span>
-              <span class="tech-tag">Clerk Auth</span>
-              <span class="tech-tag">Cloudinary</span>
+            <div class="project-card-body">
+              <p class="project-desc">
+                Room and flat rental marketplace tailored for the Nepal market. Features dedicated landlord and tenant
+                workflows, Clerk authentication, debounced live search, geospatial filtering, pagination, user wishlist
+                tracking, and Cloudinary media management.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">Next.js</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">Clerk Auth</span>
+                <span class="tech-tag">Cloudinary</span>
+              </div>
+            </div>
+            <div class="project-details">
+              <div class="project-details-inner">
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Problem</div>
+                  <div class="project-detail-text">Listings for the Nepal rental market are scattered across social media with no role-aware workflows or search.</div>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Solution</div>
+                  <div class="project-detail-text">A dedicated marketplace for landlords and tenants with verified accounts, live search, geospatial filters, and media uploads.</div>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Key Features</div>
+                  <div class="project-detail-text">Clerk auth, debounced live search, geospatial filtering, pagination, user wishlist, Cloudinary media management.</div>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Stack</div>
+                  <div class="project-detail-text">Next.js frontend, Node.js APIs, MongoDB persistence, Clerk auth, Cloudinary for media.</div>
+                </div>
+                <div class="architecture-flow">
+                  <span class="flow-node">User</span>
+                  <span class="flow-arrow"><i data-lucide="arrow-right"></i></span>
+                  <span class="flow-node">Next.js</span>
+                  <span class="flow-arrow"><i data-lucide="arrow-right"></i></span>
+                  <span class="flow-node">Node API</span>
+                  <span class="flow-arrow"><i data-lucide="arrow-right"></i></span>
+                  <span class="flow-node">Clerk</span>
+                  <span class="flow-arrow"><i data-lucide="arrow-right"></i></span>
+                  <span class="flow-node">MongoDB</span>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Live Demo</div>
+                  <div class="project-detail-text">
+                    <a href="https://meroroom.vercel.app/" target="_blank" class="project-title" style="font-size: 0.85rem;">
+                      meroroom.vercel.app <i data-lucide="arrow-up-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -283,19 +380,63 @@
                 <a href="https://sanolink.vercel.app/" target="_blank" class="project-link-btn" title="Live Preview">
                   <i data-lucide="external-link"></i>
                 </a>
+                <button class="project-expand-btn" aria-expanded="false" aria-label="Toggle project details">
+                  <i data-lucide="chevron-down"></i>
+                </button>
               </div>
             </div>
-            <p class="project-desc">
-              High-performance URL shortening service with sub-millisecond redirects, custom slug support, dynamic QR
-              code generator with PNG downloads, click tracking analytics, Redis caching layer, and PostgreSQL
-              persistence.
-            </p>
-            <div class="project-tech-tags">
-              <span class="tech-tag">TypeScript</span>
-              <span class="tech-tag">TSOA</span>
-              <span class="tech-tag">TypeORM</span>
-              <span class="tech-tag">PostgreSQL</span>
-              <span class="tech-tag">Redis</span>
+            <div class="project-card-body">
+              <p class="project-desc">
+                High-performance URL shortening service with sub-millisecond redirects, custom slug support, dynamic QR
+                code generator with PNG downloads, click tracking analytics, Redis caching layer, and PostgreSQL
+                persistence.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">TSOA</span>
+                <span class="tech-tag">TypeORM</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Redis</span>
+              </div>
+            </div>
+            <div class="project-details">
+              <div class="project-details-inner">
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Problem</div>
+                  <div class="project-detail-text">Most URL shorteners slow down at scale — every redirect hits the database.</div>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Solution</div>
+                  <div class="project-detail-text">Redis cache fronting PostgreSQL with a TypeScript TSOA API delivers sub-millisecond redirects at scale.</div>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Key Features</div>
+                  <div class="project-detail-text">Sub-ms redirects, custom slugs, dynamic QR generator with PNG export, click analytics.</div>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Stack</div>
+                  <div class="project-detail-text">TypeScript, TSOA controllers, TypeORM, PostgreSQL persistence, Redis cache.</div>
+                </div>
+                <div class="architecture-flow">
+                  <span class="flow-node">User</span>
+                  <span class="flow-arrow"><i data-lucide="arrow-right"></i></span>
+                  <span class="flow-node">App</span>
+                  <span class="flow-arrow"><i data-lucide="arrow-right"></i></span>
+                  <span class="flow-node">API</span>
+                  <span class="flow-arrow"><i data-lucide="arrow-right"></i></span>
+                  <span class="flow-node">Redis</span>
+                  <span class="flow-arrow"><i data-lucide="arrow-right"></i></span>
+                  <span class="flow-node">PostgreSQL</span>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Live Demo</div>
+                  <div class="project-detail-text">
+                    <a href="https://sanolink.vercel.app/" target="_blank" class="project-title" style="font-size: 0.85rem;">
+                      sanolink.vercel.app <i data-lucide="arrow-up-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -313,19 +454,65 @@
                 <a href="https://greenbidu.vercel.app/" target="_blank" class="project-link-btn" title="Live Preview">
                   <i data-lucide="external-link"></i>
                 </a>
+                <button class="project-expand-btn" aria-expanded="false" aria-label="Toggle project details">
+                  <i data-lucide="chevron-down"></i>
+                </button>
               </div>
             </div>
-            <p class="project-desc">
-              Agritech platform analyzing crop leaf images with a Convolutional Neural Network (CNN) model, FastAPI
-              inference backend, Node.js/Express APIs, MongoDB persistence, JWT authentication, and bilingual diagnostic
-              guidance.
-            </p>
-            <div class="project-tech-tags">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">FastAPI</span>
-              <span class="tech-tag">CNN / PyTorch</span>
-              <span class="tech-tag">MERN Stack</span>
-              <span class="tech-tag">MongoDB</span>
+            <div class="project-card-body">
+              <p class="project-desc">
+                Agritech platform analyzing crop leaf images with a Convolutional Neural Network (CNN) model, FastAPI
+                inference backend, Node.js/Express APIs, MongoDB persistence, JWT authentication, and bilingual diagnostic
+                guidance.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">FastAPI</span>
+                <span class="tech-tag">CNN / PyTorch</span>
+                <span class="tech-tag">MERN Stack</span>
+                <span class="tech-tag">MongoDB</span>
+              </div>
+            </div>
+            <div class="project-details">
+              <div class="project-details-inner">
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Problem</div>
+                  <div class="project-detail-text">Farmers in remote regions can't get fast, accurate diagnoses of crop diseases from a photo.</div>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Solution</div>
+                  <div class="project-detail-text">CNN-based leaf disease classifier exposed via a FastAPI inference service, wrapped in a MERN web app.</div>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Key Features</div>
+                  <div class="project-detail-text">CNN inference, FastAPI server, Node/Express APIs, MongoDB persistence, JWT auth, bilingual guidance.</div>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Stack</div>
+                  <div class="project-detail-text">Python + FastAPI, PyTorch CNN, Node.js/Express, MongoDB, JWT auth.</div>
+                </div>
+                <div class="architecture-flow">
+                  <span class="flow-node">Leaf Image</span>
+                  <span class="flow-arrow"><i data-lucide="arrow-right"></i></span>
+                  <span class="flow-node">Frontend</span>
+                  <span class="flow-arrow"><i data-lucide="arrow-right"></i></span>
+                  <span class="flow-node">Node/Express</span>
+                  <span class="flow-arrow"><i data-lucide="arrow-right"></i></span>
+                  <span class="flow-node">FastAPI</span>
+                  <span class="flow-arrow"><i data-lucide="arrow-right"></i></span>
+                  <span class="flow-node">CNN/PyTorch</span>
+                  <span class="flow-arrow"><i data-lucide="arrow-right"></i></span>
+                  <span class="flow-node">MongoDB</span>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Live Demo</div>
+                  <div class="project-detail-text">
+                    <a href="https://greenbidu.vercel.app/" target="_blank" class="project-title" style="font-size: 0.85rem;">
+                      greenbidu.vercel.app <i data-lucide="arrow-up-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -342,17 +529,59 @@
                 <a href="https://github.com/Subodh-Dhamala" target="_blank" class="project-link-btn" title="GitHub">
                   <i data-lucide="github"></i>
                 </a>
+                <button class="project-expand-btn" aria-expanded="false" aria-label="Toggle project details">
+                  <i data-lucide="chevron-down"></i>
+                </button>
               </div>
             </div>
-            <p class="project-desc">
-              Full-stack AI assistant connecting a React interface to Google Gemini API through Node.js/Express backend
-              with server-side stream handling, session state management, and real-time Markdown rendering.
-            </p>
-            <div class="project-tech-tags">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">Express.js</span>
-              <span class="tech-tag">Google Gemini API</span>
+            <div class="project-card-body">
+              <p class="project-desc">
+                Full-stack AI assistant connecting a React interface to Google Gemini API through Node.js/Express backend
+                with server-side stream handling, session state management, and real-time Markdown rendering.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express.js</span>
+                <span class="tech-tag">Google Gemini API</span>
+              </div>
+            </div>
+            <div class="project-details">
+              <div class="project-details-inner">
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Problem</div>
+                  <div class="project-detail-text">A polished, streaming AI assistant that works in the browser without exposing API keys client-side.</div>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Solution</div>
+                  <div class="project-detail-text">React front-end streaming from a Node/Express proxy that holds the Gemini API key and renders Markdown live.</div>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Key Features</div>
+                  <div class="project-detail-text">Server-side streaming, session state, real-time Markdown rendering, secure API key handling.</div>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Stack</div>
+                  <div class="project-detail-text">React UI, Node.js + Express.js backend, Google Gemini API.</div>
+                </div>
+                <div class="architecture-flow">
+                  <span class="flow-node">User</span>
+                  <span class="flow-arrow"><i data-lucide="arrow-right"></i></span>
+                  <span class="flow-node">React</span>
+                  <span class="flow-arrow"><i data-lucide="arrow-right"></i></span>
+                  <span class="flow-node">Express</span>
+                  <span class="flow-arrow"><i data-lucide="arrow-right"></i></span>
+                  <span class="flow-node">Gemini</span>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Source</div>
+                  <div class="project-detail-text">
+                    <a href="https://github.com/Subodh-Dhamala" target="_blank" class="project-title" style="font-size: 0.85rem;">
+                      GitHub Profile <i data-lucide="arrow-up-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -370,16 +599,57 @@
                 <a href="https://merokarma.vercel.app/" target="_blank" class="project-link-btn" title="Live Preview">
                   <i data-lucide="external-link"></i>
                 </a>
+                <button class="project-expand-btn" aria-expanded="false" aria-label="Toggle project details">
+                  <i data-lucide="chevron-down"></i>
+                </button>
               </div>
             </div>
-            <p class="project-desc">
-              Full-stack project and task management system with interactive Kanban boards, task creation, priority tagging, and completion tracking. Built with React, Vite, and Tailwind CSS.
-            </p>
-            <div class="project-tech-tags">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Vite</span>
-              <span class="tech-tag">Tailwind CSS</span>
-              <span class="tech-tag">JavaScript</span>
+            <div class="project-card-body">
+              <p class="project-desc">
+                Full-stack project and task management system with interactive Kanban boards, task creation, priority
+                tagging, and completion tracking. Built with React, Vite, and Tailwind CSS.
+              </p>
+              <div class="project-tech-tags">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Vite</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+            </div>
+            <div class="project-details">
+              <div class="project-details-inner">
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Problem</div>
+                  <div class="project-detail-text">A clean, fast Kanban tool for individual contributors without the bloat of enterprise project management suites.</div>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Solution</div>
+                  <div class="project-detail-text">Lightweight Kanban app with priority tagging, task tracking, and a snappy Vite + React + Tailwind UI.</div>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Key Features</div>
+                  <div class="project-detail-text">Interactive Kanban boards, task creation, priority tags, completion tracking.</div>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Stack</div>
+                  <div class="project-detail-text">React, Vite, Tailwind CSS, JavaScript.</div>
+                </div>
+                <div class="architecture-flow">
+                  <span class="flow-node">User</span>
+                  <span class="flow-arrow"><i data-lucide="arrow-right"></i></span>
+                  <span class="flow-node">React</span>
+                  <span class="flow-arrow"><i data-lucide="arrow-right"></i></span>
+                  <span class="flow-node">Vite</span>
+                </div>
+                <div class="project-detail-block">
+                  <div class="project-detail-label">Live Demo</div>
+                  <div class="project-detail-text">
+                    <a href="https://merokarma.vercel.app/" target="_blank" class="project-title" style="font-size: 0.85rem;">
+                      merokarma.vercel.app <i data-lucide="arrow-up-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -391,9 +661,9 @@
             <div class="mini-header-info">
               <div class="mini-header-badge">
                 <i data-lucide="layers"></i>
-                <span>Interactive Mini Apps & Experiments</span>
+                <span>Interactive Mini Apps &amp; Experiments</span>
               </div>
-              <h3 class="mini-header-title">Frontend & Utility Projects</h3>
+              <h3 class="mini-header-title">Frontend &amp; Utility Projects</h3>
               <p class="mini-header-desc">JavaScript utilities, React widgets, APIs, and mini-games built along the way.
               </p>
             </div>
@@ -404,9 +674,20 @@
             </button>
           </div>
 
+          <!-- Mini-project category filters -->
+          <div class="mini-filter-row" role="tablist" aria-label="Mini project categories">
+            <span class="mini-filter-label">Filter</span>
+            <button class="mini-filter-btn active" data-filter="all">All</button>
+            <button class="mini-filter-btn" data-filter="javascript">JavaScript</button>
+            <button class="mini-filter-btn" data-filter="react">React</button>
+            <button class="mini-filter-btn" data-filter="api">APIs</button>
+            <button class="mini-filter-btn" data-filter="game">Games</button>
+            <button class="mini-filter-btn" data-filter="utility">Utilities</button>
+          </div>
+
           <div class="mini-grid" id="mini-grid">
             <!-- 1. Todo List (local) -->
-            <a href="./projects/todo/todo.html" target="_blank" class="mini-card" data-category="mini"
+            <a href="./projects/todo/todo.html" target="_blank" class="mini-card" data-category="mini javascript utility"
               title="Open Todo List">
               <div class="mini-card-top">
                 <div class="mini-card-icon-wrap">
@@ -427,7 +708,7 @@
             </a>
 
             <!-- 2. MeroCinema -->
-            <a href="./projects/MovieApp/index.html" target="_blank" class="mini-card" data-category="mini"
+            <a href="./projects/MovieApp/index.html" target="_blank" class="mini-card" data-category="mini javascript api"
               title="Open MeroCinema">
               <div class="mini-card-top">
                 <div class="mini-card-icon-wrap">
@@ -448,7 +729,7 @@
             </a>
 
             <!-- 3. Let Him Cook (Recipe App) -->
-            <a href="./projects/RecipeApp/index.html" target="_blank" class="mini-card" data-category="mini"
+            <a href="./projects/RecipeApp/index.html" target="_blank" class="mini-card" data-category="mini javascript api"
               title="Open Let Him Cook">
               <div class="mini-card-top">
                 <div class="mini-card-icon-wrap">
@@ -469,7 +750,7 @@
             </a>
 
             <!-- 4. MeroStore -->
-            <a href="https://subodhportfolio-self.vercel.app/projects/MeroStore/index.html" target="_blank" class="mini-card" data-category="mini"
+            <a href="https://subodhportfolio-self.vercel.app/projects/MeroStore/index.html" target="_blank" class="mini-card" data-category="mini react"
               title="Open MeroStore">
               <div class="mini-card-top">
                 <div class="mini-card-icon-wrap">
@@ -490,7 +771,7 @@
             </a>
 
             <!-- 5. Weather App -->
-            <a href="./projects/weatherApp/weather.html" target="_blank" class="mini-card" data-category="mini"
+            <a href="./projects/weatherApp/weather.html" target="_blank" class="mini-card" data-category="mini javascript api"
               title="Open Weather App">
               <div class="mini-card-top">
                 <div class="mini-card-icon-wrap">
@@ -511,7 +792,7 @@
             </a>
 
             <!-- 6. YouTube Homepage Clone -->
-            <a href="./projects/YoutubeHomePage/index.html" target="_blank" class="mini-card" data-category="mini"
+            <a href="./projects/YoutubeHomePage/index.html" target="_blank" class="mini-card" data-category="mini javascript"
               title="Open YouTube Homepage Clone">
               <div class="mini-card-top">
                 <div class="mini-card-icon-wrap">
@@ -533,7 +814,7 @@
             </a>
 
             <!-- 7. Tic Tac Toe -->
-            <a href="./projects/TicTacToe/tictactoe.html" target="_blank" class="mini-card" data-category="mini"
+            <a href="./projects/TicTacToe/tictactoe.html" target="_blank" class="mini-card" data-category="mini javascript game"
               title="Open Tic Tac Toe">
               <div class="mini-card-top">
                 <div class="mini-card-icon-wrap">
@@ -555,7 +836,7 @@
             </a>
 
             <!-- 8. Calculator -->
-            <a href="./projects/Calculator/calculator.html" target="_blank" class="mini-card" data-category="mini"
+            <a href="./projects/Calculator/calculator.html" target="_blank" class="mini-card" data-category="mini javascript utility"
               title="Open Calculator">
               <div class="mini-card-top">
                 <div class="mini-card-icon-wrap">
@@ -577,7 +858,7 @@
             </a>
 
             <!-- 9. Digital Clock -->
-            <a href="https://subodhportfolio-self.vercel.app/projects/DigitalClock/index.html" target="_blank" class="mini-card" data-category="mini"
+            <a href="https://subodhportfolio-self.vercel.app/projects/DigitalClock/index.html" target="_blank" class="mini-card" data-category="mini react"
               title="Open Digital Clock">
               <div class="mini-card-top">
                 <div class="mini-card-icon-wrap">
@@ -599,7 +880,7 @@
             </a>
 
             <!-- 10. StopWatch -->
-            <a href="https://subodhportfolio-self.vercel.app/projects/StopWatch/index.html" target="_blank" class="mini-card" data-category="mini"
+            <a href="https://subodhportfolio-self.vercel.app/projects/StopWatch/index.html" target="_blank" class="mini-card" data-category="mini react"
               title="Open StopWatch">
               <div class="mini-card-top">
                 <div class="mini-card-icon-wrap">
@@ -623,14 +904,35 @@
         </div>
       </section>
 
-      <!-- 5. Skills Section -->
+      <!-- 5. NEW: System Architecture Explorer (D3) -->
+      <section id="architecture" class="section">
+        <div class="section-header">
+          <div class="section-label">
+            <i data-lucide="network"></i>
+            <span>System Architecture</span>
+          </div>
+          <h2 class="section-title">How These Systems Work</h2>
+          <p class="section-desc">Explore the architecture behind selected projects. Hover a node for details, click for more.</p>
+        </div>
+
+        <div class="arch-selector" role="tablist" aria-label="Architecture projects">
+          <button class="arch-btn active" data-project="authentication">Authentication</button>
+          <button class="arch-btn" data-project="sanolink">Sanolink</button>
+          <button class="arch-btn" data-project="greenbidu">GreenBidu</button>
+        </div>
+
+        <div id="arch-viz" role="img" aria-label="Interactive architecture diagram"></div>
+        <div class="arch-panel"></div>
+      </section>
+
+      <!-- 6. Skills Section (text fallback) -->
       <section id="skills" class="section">
         <div class="section-header">
           <div class="section-label">
             <i data-lucide="cpu"></i>
             <span>Technical Toolkit</span>
           </div>
-          <h2 class="section-title">Skills & Technologies</h2>
+          <h2 class="section-title">Skills &amp; Technologies</h2>
           <p class="section-desc">Languages, frameworks, databases, and architectures I work with daily.</p>
         </div>
 
@@ -638,10 +940,10 @@
           <div class="skill-category">
             <div class="skill-group-title">
               <i data-lucide="code-2"></i>
-              <span>Languages & Core</span>
+              <span>Languages &amp; Core</span>
             </div>
             <div class="skill-group-items">
-              JavaScript, TypeScript, Python, Java, C#, .NET, C, C++, SQL, Data Structures & Algorithms
+              JavaScript, TypeScript, Python, Java, C#, .NET, C, C++, SQL, Data Structures &amp; Algorithms
             </div>
           </div>
 
@@ -658,7 +960,7 @@
           <div class="skill-category">
             <div class="skill-group-title">
               <i data-lucide="server"></i>
-              <span>Backend & APIs</span>
+              <span>Backend &amp; APIs</span>
             </div>
             <div class="skill-group-items">
               Node.js, Express.js, FastAPI, Python, TSOA, RESTful APIs, MVC Architecture, Microservices
@@ -668,7 +970,7 @@
           <div class="skill-category">
             <div class="skill-group-title">
               <i data-lucide="database"></i>
-              <span>Databases & Caching</span>
+              <span>Databases &amp; Caching</span>
             </div>
             <div class="skill-group-items">
               PostgreSQL, MongoDB, Redis, Prisma ORM, TypeORM, MySQL, Query Optimization
@@ -678,17 +980,17 @@
           <div class="skill-category">
             <div class="skill-group-title">
               <i data-lucide="shield-check"></i>
-              <span>Security & Auth</span>
+              <span>Security &amp; Auth</span>
             </div>
             <div class="skill-group-items">
-              Clerk Auth, OAuth 2.0 (Google/GitHub), JWT & Rotation, TOTP 2FA, RBAC, Zod Validation, Sanitization
+              Clerk Auth, OAuth 2.0 (Google/GitHub), JWT &amp; Rotation, TOTP 2FA, RBAC, Zod Validation, Sanitization
             </div>
           </div>
 
           <div class="skill-category">
             <div class="skill-group-title">
               <i data-lucide="terminal"></i>
-              <span>AI / ML & DevOps</span>
+              <span>AI / ML &amp; DevOps</span>
             </div>
             <div class="skill-group-items">
               Google Gemini API, scikit-learn, CNN, Docker, Linux / Bash, Git / GitHub, CI/CD, Socket.IO
@@ -697,7 +999,85 @@
         </div>
       </section>
 
-      <!-- 6. Education Section -->
+      <!-- 6.5 NEW: Interactive Tech Stack Graph (D3) -->
+      <section id="tech-stack" class="section">
+        <div class="section-header">
+          <div class="section-label">
+            <i data-lucide="git-branch"></i>
+            <span>Engineering Stack</span>
+          </div>
+          <h2 class="section-title">My Engineering Stack</h2>
+          <p class="section-desc">Technologies I use to build complete products — and how they connect.</p>
+        </div>
+
+        <div id="tech-stack-viz" role="img" aria-label="Interactive technology relationship graph"></div>
+        <div class="tech-panel arch-panel"></div>
+      </section>
+
+      <!-- 6.6 NEW: Engineering Philosophy -->
+      <section id="philosophy" class="section">
+        <div class="section-header">
+          <div class="section-label">
+            <i data-lucide="compass"></i>
+            <span>How I Build</span>
+          </div>
+          <h2 class="section-title">Engineering Philosophy</h2>
+          <p class="section-desc">Four principles that guide how I design, write, and ship systems.</p>
+        </div>
+
+        <div class="philosophy-grid">
+          <div class="phil-card">
+            <div class="phil-number">01</div>
+            <h3 class="phil-title">Reliable</h3>
+            <p class="phil-desc">Systems designed for real usage — not just demos. Inputs are validated, errors are surfaced, and the happy path isn't the only path.</p>
+          </div>
+          <div class="phil-card">
+            <div class="phil-number">02</div>
+            <h3 class="phil-title">Scalable</h3>
+            <p class="phil-desc">Architecture that can grow with the product. Caching, async work, and clean service boundaries are decided early, not bolted on.</p>
+          </div>
+          <div class="phil-card">
+            <div class="phil-number">03</div>
+            <h3 class="phil-title">Secure</h3>
+            <p class="phil-desc">Authentication, validation, and access control are part of the system — not an afterthought. Secrets stay server-side, and inputs are never trusted.</p>
+          </div>
+          <div class="phil-card">
+            <div class="phil-number">04</div>
+            <h3 class="phil-title">Maintainable</h3>
+            <p class="phil-desc">Clear architecture and code that remains understandable six months later. Names that describe, boundaries that hold, and tests that catch regressions.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6.7 NEW: GitHub Activity (Placeholder) -->
+      <section id="github" class="section">
+        <div class="section-header">
+          <div class="section-label">
+            <i data-lucide="github"></i>
+            <span>Open Source &amp; Activity</span>
+          </div>
+          <h2 class="section-title">GitHub Activity</h2>
+          <p class="section-desc">A contribution-style visualization of recent development activity.</p>
+        </div>
+
+        <div class="github-wrapper">
+          <div class="github-header">
+            <div class="github-title">
+              <i data-lucide="github"></i>
+              <span>Contribution Activity</span>
+            </div>
+            <span class="github-badge">Awaiting data</span>
+          </div>
+          <div id="github-heatmap" aria-hidden="true">
+            <div class="github-placeholder">
+              <p>GitHub activity heatmap will render here once contribution data is available.</p>
+              <p style="font-size: 0.8rem; opacity: 0.7;">Add <code>assets/github-contrib.json</code> to display real contribution data.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Education Section -->
       <section id="education" class="section">
         <div class="section-header">
           <div class="section-label">
@@ -716,11 +1096,12 @@
                 <div class="timeline-date">TU &bull; Nepal</div>
               </div>
               <div class="timeline-company">
-                <i data-lucide="school" style="width: 14px; height: 14px;"></i>
+                <i data-lucide="school"></i>
                 <span>Bhaktapur Multiple Campus &bull; Tribhuvan University</span>
               </div>
               <div class="timeline-body">
-                <p>Comprehensive computer science foundation covering Data Structures & Algorithms, Database Management
+                <p>Comprehensive computer science foundation covering Data Structures &amp; Algorithms, Database
+                  Management
                   Systems, Operating Systems, Web Technologies, Computer Networks, and Artificial Intelligence.</p>
               </div>
             </div>
@@ -728,7 +1109,7 @@
         </div>
       </section>
 
-      <!-- 7. Contact Section -->
+      <!-- 8. Contact Section -->
       <section id="contact" class="section">
         <div class="contact-box">
           <div class="section-label">
@@ -743,19 +1124,16 @@
 
           <div class="contact-email-row">
             <div>
-              <div
-                style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); font-weight: 600; margin-bottom: 2px;">
-                Direct Email</div>
+              <div class="contact-email-label">Direct Email</div>
               <a href="mailto:subodhdhamala@gmail.com" class="contact-email-address">
                 subodhdhamala@gmail.com
               </a>
             </div>
-            <div style="display: flex; gap: 8px;">
-              <a href="mailto:subodhdhamala@gmail.com" class="btn btn-primary"
-                style="padding: 7px 14px; font-size: 0.82rem;">
+            <div class="contact-email-actions">
+              <a href="mailto:subodhdhamala@gmail.com" class="btn btn-primary">
                 <i data-lucide="send"></i> Send Email
               </a>
-              <button id="copy-email-btn" class="btn" style="padding: 7px 12px; font-size: 0.82rem;">
+              <button id="copy-email-btn" class="btn">
                 <i data-lucide="copy"></i> Copy
               </button>
             </div>
@@ -790,12 +1168,10 @@
           <span id="cv-modal-title">Subodh_Dhamala_CV.pdf</span>
         </div>
         <div class="modal-actions">
-          <a href="./assets/Subodh_Dhamala_CV.pdf" target="_blank" class="btn"
-            style="padding: 5px 11px; font-size: 0.8rem;">
+          <a href="./assets/Subodh_Dhamala_CV.pdf" target="_blank" class="btn">
             <i data-lucide="external-link"></i> Open Tab
           </a>
-          <a href="./assets/Subodh_Dhamala_CV.pdf" download="Subodh_Dhamala_CV.pdf" class="btn"
-            style="padding: 5px 11px; font-size: 0.8rem;">
+          <a href="./assets/Subodh_Dhamala_CV.pdf" download="Subodh_Dhamala_CV.pdf" class="btn">
             <i data-lucide="download"></i> Download
           </a>
           <button id="cv-modal-close" class="modal-close-btn" aria-label="Close modal">
@@ -822,7 +1198,7 @@
     </div>
   </footer>
 
-  <script src="./script.js?v=1.2"></script>
+  <script src="./script.js?v=2.0"></script>
 </body>
 
 </html>
