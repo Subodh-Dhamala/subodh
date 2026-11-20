@@ -519,7 +519,12 @@ header {
   background: var(--bg-card);
   transform: translateY(-1px);
 }
-.social-icon-btn svg { width: 17px; height: 17px; }
+.social-icon-btn svg,
+.social-icon-btn img { width: 17px; height: 17px; }
+.social-icon-btn img { object-fit: contain; }
+.linkedin-brand-icon {
+  filter: brightness(0) saturate(100%) invert(66%) sepia(87%) saturate(1126%) hue-rotate(178deg) brightness(105%) contrast(95%);
+}
 
 /* ==========================================================================
    2. ABOUT SECTION
@@ -1126,7 +1131,8 @@ header {
   transform: translateY(-2px);
 }
 
-.mini-card.mini-hidden { display: none; }
+.mini-card.hidden,
+.mini-card.mini-hidden { display: none !important; }
 
 .mini-card-top {
   display: flex;
@@ -1583,7 +1589,9 @@ header {
   background: var(--bg-card-hover);
   transform: translateY(-1px);
 }
-.contact-social-pill svg { width: 14px; height: 14px; }
+.contact-social-pill svg,
+.contact-social-pill img { width: 14px; height: 14px; }
+.contact-social-pill img { object-fit: contain; }
 
 /* ==========================================================================
    CV MODAL
@@ -1856,8 +1864,7 @@ footer {
 [hidden],
 #architecture,
 #tech-stack,
-#github,
-#mini-projects {
+#github {
   display: none !important;
 }
 
